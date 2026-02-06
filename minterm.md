@@ -138,9 +138,10 @@ Para crear una pregunta Moodle de este estilo:
 4. Pega el código y vuelve a pulsar </> para ocultar el código html.
 5. Adapta el enunciado a tu pregunta.
 
-````
-Formato de respuesta: m6v<br><meta charset="UTF-8">
-<p>
+# Código
+
+    Formato de respuesta: m6v<br><meta charset="UTF-8">
+    <p>
     <script type="text/javascript">
 	
 	    /////////////////////////////////////////////////////////////////
@@ -245,20 +246,18 @@ Formato de respuesta: m6v<br><meta charset="UTF-8">
             document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
         }
     </script>
-</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
-<input id="idand" type="button" value="·" onclick="and()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<br>
-<input id="idx5" type="button" value="x5" onclick="x5()" style="font-size:30px; height:50px; width:50px">
-<input id="idx4" type="button" value="x4" onclick="x4()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<input id="idx3" type="button" value="x3" onclick="x3()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<input id="idx2" type="button" value="x2" onclick="x2()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<input id="idx1" type="button" value="x1" onclick="x1()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<input id="idx0" type="button" value="x0" onclick="x0()" disabled="true" style="font-size:30px; height:50px; width:50px">
-<br>
-<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
-<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px">
-
-<div id="result" style="font-size:30px;"></div>
-<div id="result2"></div>    ----------------------------------<br>Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>Indica cuál es su minterm m<sub>i</sub>
-````
+    </p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+    <input id="idand" type="button" value="·" onclick="and()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <br>
+    <input id="idx5" type="button" value="x5" onclick="x5()" style="font-size:30px; height:50px; width:50px">
+    <input id="idx4" type="button" value="x4" onclick="x4()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <input id="idx3" type="button" value="x3" onclick="x3()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <input id="idx2" type="button" value="x2" onclick="x2()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <input id="idx1" type="button" value="x1" onclick="x1()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <input id="idx0" type="button" value="x0" onclick="x0()" disabled="true" style="font-size:30px; height:50px; width:50px">
+    <br>
+    <input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+    <input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px">
+    <div id="result" style="font-size:30px;"></div>
+    <div id="result2"></div>    ----------------------------------<br>Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>Indica cuál es su minterm m<sub>i</sub>
