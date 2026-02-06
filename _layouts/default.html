@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* sidebar */
+.sidebar{
+  position: fixed;
+  left:0;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#1e1e1e;
+  overflow:auto;
+  padding:15px;
+}
+
+.sidebar h2{
+  color:white;
+  margin-top:0;
+  font-size:20px;
+}
+
+.sidebar a{
+  display:block;
+  color:#ccc;
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.sidebar a:hover{
+  background:#333;
+  color:white;
+}
+
+/* activo */
+.sidebar a.active{
+  background:#0066cc;
+  color:white;
+  font-weight:bold;
+}
+
+/* contenido */
+.main{
+  margin-left:280px;
+  padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>IC Quiz</h2>
+
+  <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Inicio</a>
+
+  <a href="{{ '/minterm.html' | relative_url }}" class="{% if page.url contains 'minterm' %}active{% endif %}">minterm</a>
+  <a href="{{ '/maxterm.html' | relative_url }}" class="{% if page.url contains 'maxterm' %}active{% endif %}">Maxterm</a>
+  <a href="{{ '/forma1.html' | relative_url }}" class="{% if page.url contains 'forma1' %}active{% endif %}">1ª forma canónica</a>
+  <a href="{{ '/forma2.html' | relative_url }}" class="{% if page.url contains 'forma2' %}active{% endif %}">2ª forma canónica</a>
+  <a href="{{ '/tabla-verdad.html' | relative_url }}" class="{% if page.url contains 'tabla-verdad' %}active{% endif %}">Tabla de Verdad</a>
+
+  <a href="{{ '/nand-spd.html' | relative_url }}" class="{% if page.url contains 'nand-spd' %}active{% endif %}">spd/pds NAND</a>
+  <a href="{{ '/nand-tv.html' | relative_url }}" class="{% if page.url contains 'nand-tv' %}active{% endif %}">TV NAND</a>
+  <a href="{{ '/nor-spd.html' | relative_url }}" class="{% if page.url contains 'nor-spd' %}active{% endif %}">spd/pds NOR</a>
+  <a href="{{ '/nor-tv.html' | relative_url }}" class="{% if page.url contains 'nor-tv' %}active{% endif %}">TV NOR</a>
+
+  <a href="{{ '/vector8.html' | relative_url }}" class="{% if page.url contains 'vector8' %}active{% endif %}">Vector 8b</a>
+  <a href="{{ '/vector16.html' | relative_url }}" class="{% if page.url contains 'vector16' %}active{% endif %}">Vector 16b</a>
+
+  <a href="{{ '/hex4.html' | relative_url }}" class="{% if page.url contains 'hex4' %}active{% endif %}">Hex 4</a>
+  <a href="{{ '/hex8.html' | relative_url }}" class="{% if page.url contains 'hex8' %}active{% endif %}">Hex 8</a>
+  <a href="{{ '/octal3.html' | relative_url }}" class="{% if page.url contains 'octal3' %}active{% endif %}">Octal</a>
+
+  <a href="{{ '/suma.html' | relative_url }}" class="{% if page.url contains 'suma' %}active{% endif %}">Suma</a>
+  <a href="{{ '/ieee32.html' | relative_url }}" class="{% if page.url contains 'ieee32' %}active{% endif %}">IEEE 753-32b</a>
+
+  <a href="{{ '/karnaugh-msp.html' | relative_url }}" class="{% if page.url contains 'karnaugh-msp' %}active{% endif %}">Karnaugh msp</a>
+  <a href="{{ '/karnaugh-mps.html' | relative_url }}" class="{% if page.url contains 'karnaugh-mps' %}active{% endif %}">Karnaugh mps</a>
+
+  <a href="{{ '/diseno-directo.html' | relative_url }}" class="{% if page.url contains 'diseno-directo' %}active{% endif %}">Diseño directo</a>
+  <a href="{{ '/diseno-canonico.html' | relative_url }}" class="{% if page.url contains 'diseno-canonico' %}active{% endif %}">Diseño canónico</a>
+  <a href="{{ '/tamano-rom.html' | relative_url }}" class="{% if page.url contains 'tamano-rom' %}active{% endif %}">Tamaño ROM</a>
+</div>
+
+<div class="main">
+{{ content }}
+</div>
+
+</body>
+</html>
