@@ -5,9 +5,10 @@ title: IC Student Quiz - minterm
 
 # Ejemplo de ejercicio: minterm de 6 variables
 
-Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>Indica cuál es su minterm m<sub>i</sub>
-  ----------------------------------<br>
-Formato de respuesta: m6v<br>
+Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
+Indica cuál es su minterm m<sub>i</sub>
+<br>----------------------------------<br>
+Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
    <option value="teclado_m6v.html" data-w="500" data-h="300">m6v</option>
 </select>
