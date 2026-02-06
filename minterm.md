@@ -131,16 +131,13 @@ Formato de respuesta: m6v<br><meta charset="UTF-8">
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Copia el código de abajo pulsando el botón. 
+1. Copia el código de abajo pulsando el botón <button onclick="copiar_codigo()">Copiar código iframe</button>
 2. Ve a la actividad 'IC Student Quiz' y pulsa el botón 'Crear pregunta nueva'.
    Elige tipo de pregunta 'Respuesta corta'.
 3. En el campo 'Enunciado de la pregunta'  pulsa el botón ⮧ para mostrar más botones y pulsa el botón </> para mostrar el código html. 
 4. Pega el código y vuelve a pulsar </> para ocultar el código html.
 5. Adapta el enunciado a tu pregunta.
 
-# Código
-
-<button onclick="copiar_codigo()">Copiar código iframe</button>
 <textarea id="codigo" style="display:none;">
 Formato de respuesta: m6v<br><meta charset="UTF-8">
 <p>
