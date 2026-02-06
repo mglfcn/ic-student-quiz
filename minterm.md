@@ -76,16 +76,16 @@ Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub><br>
 </div>
 
+<div style="border: 2px solid #000; padding: 20px; width: 500px; border-radius: 8px; background-color: #f9f9f9;">
 Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
-   <option value="teclado_m6v.html" data-w="500" data-h="200">m6v</option>
+   <option value="teclado_m6v.html" data-w="500" data-h="250">m6v</option>
 </select>
-
-Si el teclado no aparece pulsa el botón.
-<button type="button" onclick="recargar()">↻ </button>
+<button type="button" onclick="recargar()">↻ Recargar teclado</button>
 
 <iframe id="visor" style="border:none;" allow="clipboard-read; clipboard-write">
 </iframe>
+</div>
 
 <script>
  const servidores = [
@@ -123,7 +123,6 @@ Si el teclado no aparece pulsa el botón.
 
  cargarPagina();
 </script>
-   
 </textarea>
 <script>
 function copiar_codigo(){
