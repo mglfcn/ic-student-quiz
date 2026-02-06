@@ -1,8 +1,8 @@
 ---
 layout: default
-title: minterm
+title: IC Student Quiz - minterm
 ---
 
-# minterm
+# minterm de 6 variables
 
 Aquí irá el quiz.
