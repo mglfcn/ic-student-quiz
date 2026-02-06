@@ -13,7 +13,7 @@ Indica cuál es su minterm m<sub>i</sub><br>
 <div style="border: 2px solid #000; padding: 20px; width: 500px; border-radius: 8px; background-color: #f9f9f9;">
 Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
-   <option value="teclado_m6v.html" data-w="500" data-h="200">m6v</option>
+   <option value="teclado_m6v.html" data-w="500" data-h="300">m6v</option>
 </select>
 <button type="button" onclick="recargar()">↻ Recargar teclado</button>
 
