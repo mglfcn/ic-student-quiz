@@ -147,7 +147,6 @@ function copiar_codigo() {
 width="320"
 height="350"
 style="border:none;"></iframe>`;
-
   navigator.clipboard.writeText(codigo);
   alert("Código copiado al portapapeles");
 }
