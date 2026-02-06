@@ -14,9 +14,7 @@ Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
    <option value="teclado_m6v.html" data-w="500" data-h="200">m6v</option>
 </select>
-
-Si el teclado no aparece pulsa el botón.
-<button type="button" onclick="recargar()">↻ </button>
+<button type="button" onclick="recargar()">↻ Recargar teclado</button>
 
 <iframe id="visor" style="border:none;" allow="clipboard-read; clipboard-write">
 </iframe>
