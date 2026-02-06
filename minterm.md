@@ -141,13 +141,13 @@ Para crear una pregunta Moodle de este estilo:
 # Código
 
 <button onclick="copiar_codigo()">Copiar código iframe</button>
+<textarea id="codigo" style="display:none;">
+<iframe src="https://webdiis.unizar.es/~luisma/ic/teclado_inst.html" width="320" height="350" style="border:none;"></iframe>
+</textarea>
 <script>
-function copiar_codigo() {
-  const codigo = '<iframe src="https://webdiis.unizar.es/~luisma/ic/teclado_inst.html"
-width="320"
-height="350"
-style="border:none;"></iframe>';
-  navigator.clipboard.writeText(codigo);
-  alert("Código copiado al portapapeles");
+function copiar_codigo(){
+  const texto = document.getElementById("codigo").value;
+  navigator.clipboard.writeText(texto);
+  alert("Copiado");
 }
 </script>
