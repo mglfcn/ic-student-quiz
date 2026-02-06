@@ -17,7 +17,6 @@ Formato de respuesta:
 
 Si el teclado no aparece pulsa el botón.
 <button type="button" onclick="recargar()">↻ </button>
-<br><br>
 
 <iframe id="visor" style="border:none;" allow="clipboard-read; clipboard-write">
 </iframe>
@@ -84,7 +83,6 @@ Formato de respuesta:
 
 Si el teclado no aparece pulsa el botón.
 <button type="button" onclick="recargar()">↻ </button>
-<br><br>
 
 <iframe id="visor" style="border:none;" allow="clipboard-read; clipboard-write">
 </iframe>
