@@ -8,7 +8,7 @@ title: IC Student Quiz - minterm
 Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub>
 
-Pulsa en el botón para generar la respuesta en el formato: <a href="https://mglfcn.github.io/kb/ic/teclado_m6v.html" target="_blank">m6v</a>
+Pulsa en el botón para generar la respuesta en el formato: <a href="teclado_m6v.html" target="_blank">m6v</a>
 
 # Instrucciones
 
