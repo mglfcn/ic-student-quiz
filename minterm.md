@@ -8,8 +8,6 @@ title: IC Student Quiz - minterm
 Formato de respuesta: m6v<br>
 Elige el teclado. Si no aparece pulsa el botón.<br>
 <select id="pagina" onchange="cargarPagina()">
-   <option value="teclado_sdp-q2-q1-q0.html" data-w="620" data-h="460">sdp</option>
-   <option value="FSM-editor-P26.html" data-w="1000" data-h="600">Autómata</option>
    <option value="teclado_m6v.html" data-w="500" data-h="300">m6v</option>
 </select>
 
