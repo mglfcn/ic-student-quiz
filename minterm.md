@@ -24,7 +24,7 @@ Elige el teclado. Si no aparece pulsa el botón.<br>
  const servidores = [
   "https://mglfcn.github.io/mkgen/",
   "https://webdiis.unizar.es/~luisma/mkgen/kb/",
-  "https://mglfcn.github.io/kb/ic/",
+  "kb/ic/",
   "https://webdiis.unizar.es/~luisma/ic/"
  ];
 
