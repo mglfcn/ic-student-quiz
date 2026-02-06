@@ -131,7 +131,7 @@ Formato de respuesta: m6v<br><meta charset="UTF-8">
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código iframe</button>
+1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
 2. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
 3. Pon un nombre a tu pregunta.
 4. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
