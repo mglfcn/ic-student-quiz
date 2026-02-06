@@ -23,6 +23,10 @@ Para crear una pregunta Moodle de este estilo:
 Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
 <textarea id="codigo" style="display:none;">
+Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
+Indica cuál es su minterm m<sub>i</sub>
+
+Pulsa en el botón para generar la respuesta en el formato: <a href="kb/ic/teclado_m6v.html" target="_blank">m6v</a>
 </textarea>
 <script>
 function copiar_codigo(){
