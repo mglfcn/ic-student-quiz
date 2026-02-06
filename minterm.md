@@ -126,4 +126,5 @@ Formato de respuesta: m6v<br><meta charset="UTF-8">
 <input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px">
 
 <div id="result" style="font-size:30px;"></div>
-<div id="result2"></div>    ----------------------------------<br>Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>Indica cuál es su minterm m<sub>i</sub>
+<div id="result2">
+</div>    ----------------------------------<br>Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>Indica cuál es su minterm m<sub>i</sub>
