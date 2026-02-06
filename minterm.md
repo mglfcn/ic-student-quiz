@@ -10,6 +10,7 @@ Elige el teclado. Si no aparece pulsa el botón.<br>
 <select id="pagina" onchange="cargarPagina()">
    <option value="teclado_sdp-q2-q1-q0.html" data-w="620" data-h="460">sdp</option>
    <option value="FSM-editor-P26.html" data-w="1000" data-h="600">Autómata</option>
+   <option value="teclado_m6v.html" data-w="500" data-h="300">m6v</option>
 </select>
 
 <button type="button" onclick="recargar()">↻ </button>
@@ -22,7 +23,9 @@ Elige el teclado. Si no aparece pulsa el botón.<br>
 <script>
  const servidores = [
   "https://mglfcn.github.io/mkgen/",
-  "https://webdiis.unizar.es/~luisma/mkgen/kb/"
+  "https://webdiis.unizar.es/~luisma/mkgen/kb/",
+  "https://mglfcn.github.io/kb/ic/",
+  "https://webdiis.unizar.es/~luisma/ic/"
  ];
 
  let servidorActual = 0;
