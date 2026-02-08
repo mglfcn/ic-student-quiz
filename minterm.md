@@ -27,7 +27,8 @@ Formato de respuesta:
   //"https://mglfcn.github.io/mkgen/",
   //"https://webdiis.unizar.es/~luisma/mkgen/kb/",
   "kb/ic/", //comentar este en el textarea
-  //"https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
+  "/ic-student-quiz/kb/ic/",
+  "https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
   "https://webdiis.unizar.es/~luisma/ic/"
  ];
 
@@ -103,7 +104,8 @@ Formato de respuesta:
   //"https://mglfcn.github.io/mkgen/",
   //"https://webdiis.unizar.es/~luisma/mkgen/kb/",
   "kb/ic/", //comentar este en el textarea
-  //"https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
+  "/ic-student-quiz/kb/ic/",
+  "https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
   "https://webdiis.unizar.es/~luisma/ic/"
  ];
 
