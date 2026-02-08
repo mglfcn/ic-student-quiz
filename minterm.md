@@ -5,6 +5,7 @@ title: IC Student Quiz - minterm
 
 # Ejemplo de ejercicio: minterm de 6 variables
 
+{% capture macro %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub><br>
@@ -68,6 +69,8 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0
  }
  cargarPagina();
 </script>
+{% endcapture %}
+{{ macro }}
 
 # Instrucciones
 
@@ -83,70 +86,7 @@ Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar
 
 <textarea id="codigo" style="display:none;">
 
-<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
-Indica cuál es su minterm m<sub>i</sub><br>
-</div>
-
-<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Formato de respuesta:
-<select id="pagina" onchange="cargarPagina()">
- <option value="teclado_m6v.html" data-w="400" data-h="250" data-h-movil="320">m6v</option>
- <!-- <option value="teclado_m6v.html" data-w="650" data-h="200" data-h-movil="320">m6v</option> -->
-</select>
-Ejemplo: x5’·x4·x3’·x2·x1’·x0
-<button type="button" onclick="recargar()">↻ Recargar teclado</button>
-
- <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
- </iframe>
-</div>
-
-<script>
- const servidores = [
-  //"https://mglfcn.github.io/mkgen/",
-  //"https://webdiis.unizar.es/~luisma/mkgen/kb/",
-  //"kb/ic/", //no funciona en el textarea (para Moodle)
-  //"/ic-student-quiz/kb/ic/", //no funciona en el textarea (para Moodle)
-  "https://mglfcn.github.io/ic-student-quiz/kb/ic/",
-  "https://webdiis.unizar.es/~luisma/ic/"
- ];
-
- let servidorActual = 0;
-
- function cargarPagina() {
-  servidorActual = 0;
-  actualizarIframe();
- }
-
- function recargar() {
-  servidorActual = (servidorActual + 1) % servidores.length;
-  actualizarIframe();
- }
-
- function actualizarIframe() {
-  const select = document.getElementById("pagina");
-  const option = select.options[select.selectedIndex];
-
-  const iframe = document.getElementById("visor");
-
-  // tamaño específico por página
-  iframe.width = option.dataset.w;
-  if (esMovil() && option.dataset.hMovil) {
-   iframe.height = option.dataset.hMovil;
-  } else {
-   iframe.height = option.dataset.h;
-  }
-
-  // URL final
-  iframe.src = servidores[servidorActual] + option.value;
- }
-
- function esMovil() {
-  return window.innerWidth < 450;
- }
- cargarPagina();
-</script>
-
+{{ macro }}
 
 </textarea>
 
