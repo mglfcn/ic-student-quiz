@@ -1,0 +1,54 @@
+---
+layout: default
+title: IC Student Quiz - Maxterm
+---
+
+# Ejemplo de ejercicio: Maxterm de 6 variables
+
+{% capture macro %}
+<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
+Indica cuál es su Maxterm M<sub>i</sub>
+</div>
+
+<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+Formato de respuesta: Maxterm de 6 variables 
+<select id="pagina" onchange="cargarPagina()">
+ <option value="teclado_M6v.html" data-w="400" data-h="250" data-h-movil="320">M6v</option>
+ <!-- <option value="teclado_m6v.html" data-w="650" data-h="200" data-h-movil="320">m6v</option> -->
+</select><br>
+Ejemplo: x5’+x4+x3’+x2+x1’+x0<br>
+<button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
+
+ <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
+ </iframe>
+</div>
+
+{% include mi_script.md %}
+
+{% endcapture %}
+{{ macro }}
+
+# Instrucciones
+
+Para crear una pregunta Moodle de este estilo:
+1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
+2. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
+3. Pon un nombre a tu pregunta.
+4. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
+5. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
+6. En el campo 'Respuesta' indica la respuesta y su calificación.
+
+Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
+
+<textarea id="codigo" style="display:none;">
+{{ macro }}
+</textarea>
+
+<script>
+function copiar_codigo(){
+ const texto = document.getElementById("codigo").value;
+ navigator.clipboard.writeText(texto);
+ alert("Código copiado");
+}
+</script>
