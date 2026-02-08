@@ -6,6 +6,7 @@ title: IC Student Quiz
 # IC Student Quiz
 
 ![El juego ha comenzado](img/el-juego-ha-comenzado.png)
+
 En estas páginas dispones de varias propuestas de ejercicios para crear preguntas de los tipos 'Respuesta corta' y 'Regular expression short answer' para el 'IC Student Quiz' de Moodle.
 
 Elige en el menú lateral el tipo de ejercicio que quieras crear y sigue las instrucciones indicadas.
