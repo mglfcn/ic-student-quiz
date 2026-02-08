@@ -16,8 +16,8 @@ Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
  <option value="teclado_m6v.html" data-w="400" data-h="250" data-h-movil="320">m6v</option>
  <!-- <option value="teclado_m6v.html" data-w="650" data-h="200" data-h-movil="320">m6v</option> -->
-</select>
-Ejemplo: x5’·x4·x3’·x2·x1’·x0
+</select><br>
+Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 <button type="button" onclick="recargar()">↻ Recargar teclado</button>
 
  <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
