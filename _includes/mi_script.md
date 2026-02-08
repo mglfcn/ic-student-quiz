@@ -41,12 +41,6 @@
  function esMovil() {
   return window.innerWidth < 450;
  }
-
-function copiar_codigo(){
- const texto = document.getElementById("codigo").value;
- navigator.clipboard.writeText(texto);
- alert("Código copiado");
-}
   
  cargarPagina();
 </script>
