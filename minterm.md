@@ -5,12 +5,12 @@ title: IC Student Quiz - minterm
 
 # Ejemplo de ejercicio: minterm de 6 variables
 
-<div style="border: 1px solid #000; padding: 20px; width: 650px; border-radius: 8px; background-color: #f9f9f9;">
+<div style="border: 1px solid #000; padding: 20px; width: 500px; border-radius: 8px; background-color: #f9f9f9;">
 Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub><br>
 </div>
 
-<div id="contenedorIframe" style="border: 1px solid #000; padding: 10px; width: 650px; border-radius: 8px; background-color: #f9f9f9;">
+<div id="contenedorIframe" style="border: 1px solid #000; padding: 10px; width: 500px; border-radius: 8px; background-color: #f9f9f9;">
 Formato de respuesta:
 <select id="pagina" onchange="cargarPagina()">
  <option value="teclado_m6v.html" data-w="400" data-h="250" data-h-movil="320">m6v</option>
