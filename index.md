@@ -11,9 +11,4 @@ Elige en el menú lateral el tipo de ejercicio que quieras crear y sigue las ins
 
 Los ejercicios tendrán incorporado un teclado que facilitará la generación de la respuesta en el [formato](https://drive.google.com/file/d/1E9tIScRiF2M2ldZ_VFMrby-MuypGcfVO/view) adecuado.
 
-| ![El juego ha comenzado](img/el-juego-ha-comenzado.png) | <iframe 
-  src="https://drive.google.com/file/d/13g6vsv0FgCinb1v43ZtrGR6Sx2zJ3v1R/preview"
-  width="640" 
-  height="360" 
-  allow="autoplay">
-</iframe> |
+| ![El juego ha comenzado](img/el-juego-ha-comenzado.png) | <iframe src="https://drive.google.com/file/d/13g6vsv0FgCinb1v43ZtrGR6Sx2zJ3v1R/preview" width="640" height="360" allow="autoplay"></iframe> |
