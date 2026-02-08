@@ -1,9 +1,5 @@
 <script>
  const servidores = [
-  //"https://mglfcn.github.io/mkgen/",
-  //"https://webdiis.unizar.es/~luisma/mkgen/kb/",
-  //"kb/ic/", //no funciona en el textarea (para Moodle)
-  //"/ic-student-quiz/kb/ic/", //no funciona en el textarea (para Moodle)
   "https://mglfcn.github.io/ic-student-quiz/kb/ic/",
   "https://webdiis.unizar.es/~luisma/ic/"
  ];
