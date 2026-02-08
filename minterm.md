@@ -102,8 +102,8 @@ Formato de respuesta:
  const servidores = [
   //"https://mglfcn.github.io/mkgen/",
   //"https://webdiis.unizar.es/~luisma/mkgen/kb/",
-  "kb/ic/", //comentar este en el textarea
-  //"https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
+  //"kb/ic/", //comentar este en el textarea
+  "https://mglfcn.github.io/ic-student-quiz/kb/ic/", // comentar este en github
   "https://webdiis.unizar.es/~luisma/ic/"
  ];
 
