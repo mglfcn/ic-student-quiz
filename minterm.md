@@ -18,7 +18,7 @@ Formato de respuesta:
 </select>
 <button type="button" onclick="recargar()">↻ Recargar teclado</button>
 
- <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
+ <iframe id="visor" style="border:none;" allow="clipboard-read; clipboard-write">
  </iframe>
 </div>
 
