@@ -38,14 +38,13 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 {% endcapture %}
 
 {{ macro_enunciado }}
-<!-- elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61) YA NO -->
 {{ macro_teclado_enlace }}
 {{ macro_teclado_incrustado }}
 
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (para el StudenQuiz)</button> <button onclick="mostrar_div2()">Con teclado incrustado</button>
+1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (para el StudentQuiz)</button> <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
 2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
 3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
 4. Pon un nombre a tu pregunta.
@@ -55,27 +54,40 @@ Para crear una pregunta Moodle de este estilo:
 
 Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
-<textarea id="codigo" style="display:none;">
+<textarea id="codigo_div1" style="display:none;">
 {{ macro_enunciado }}
 {{ macro_teclado_enlace }}
 </textarea>
 
+<textarea id="codigo_div2" style="display:none;">
+{{ macro_enunciado }}
+{{ macro_teclado_incrustado }}
+</textarea>
+
 <script>
 function copiar_codigo(){
- const texto = document.getElementById("codigo").value;
- navigator.clipboard.writeText(texto);
- alert("Código copiado");
+ if (version_div==1){
+  const texto = document.getElementById("codigo_div1").value;
+  navigator.clipboard.writeText(texto);
+  alert("Código con teclado enlazado copiado (sí funciona en StudentQuiz)");
+ }else {
+  const texto = document.getElementById("codigo_div2").value;
+  navigator.clipboard.writeText(texto);
+  alert("Código con teclado incrustado copiado (no funciona en StudentQuiz)");
+ }
 }
 
 function mostrar_div1(){
+ version_div=1;
  document.getElementById("div2").style.display = "none";
  document.getElementById("div1").style.display = "block";
 }
 function mostrar_div2(){
+ version_div=2;
  document.getElementById("div1").style.display = "none";
  document.getElementById("div2").style.display = "block";
 }
- 
+let version_div=1; 
 document.getElementById("div2").style.display = "none";
  
 </script>
