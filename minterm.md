@@ -41,7 +41,7 @@ Pulsa en el enlace para acceder al teclado en otra pestaña.
  
 {% endcapture %}
 {{ macro_enunciado }}
-{{ macro_teclado_incrustado }}
+{{ macro_teclado_enlace }}
 
 # Instrucciones
 
@@ -57,7 +57,7 @@ Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar
 
 <textarea id="codigo" style="display:none;">
 {{ macro_enunciado }}
-{{ macro_teclado_incrustado }}
+{{ macro_teclado_enlace }}
 </textarea>
 
 <script>
