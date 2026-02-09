@@ -26,9 +26,10 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
  m6v
 </div>
 
-//{% include mi_script.md %}
+{% includeNO mi_script.md %}
  -->
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+Las preguntas StudentQuiz de Moodle no soportan teclados incrustados. Pulsa en el enlace para acceder al teclado en otra pestaña.
 Formato de respuesta: minterm de 6 variables <a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">m6v</a><br>
 Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 </div>
