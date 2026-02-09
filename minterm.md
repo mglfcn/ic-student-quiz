@@ -11,22 +11,28 @@ Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub>
 </div>
 
+<!-- 
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Formato de respuesta: minterm de 6 variables
  
-<!-- <select id="pagina" onchange="cargarPagina()">
+<select id="pagina" onchange="cargarPagina()">
  <option value="teclado_m6v.html" data-w="400" data-h="250" data-h-movil="320">m6v</option>
 </select><br>
 Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 <button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
 
  <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
- </iframe> -->
+ </iframe>
  m6v
 </div>
 
 {% include mi_script.md %}
-
+ -->
+<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+Formato de respuesta: minterm de 6 variables [m6v](https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html)
+Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
+</div>
+ 
 {% endcapture %}
 {{ macro }}
 
