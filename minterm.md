@@ -12,8 +12,16 @@ Indica cuál es su minterm m<sub>i</sub>
 </div>
 {% endcapture %}
 
+{% capture macro_teclado_enlace %}
+<div id="div1" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">m6v</a></u></b><br>
+Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
+Pulsa en el enlace para acceder al teclado en otra pestaña.
+</div>
+{% endcapture %}
+
 {% capture macro_teclado_incrustado %}
-<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
+<div id="div2" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Formato de respuesta: minterm de 6 variables
  
 <select id="pagina" onchange="cargarPagina()">
@@ -27,21 +35,12 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 </div>
 
 {% include mi_script.md %}
- 
 {% endcapture %}
 
-{% capture macro_teclado_enlace %}
-
-<div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">m6v</a></u></b><br>
-Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
-Pulsa en el enlace para acceder al teclado en otra pestaña.
-</div>
- 
-{% endcapture %}
 {{ macro_enunciado }}
 <!-- elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61) -->
 {{ macro_teclado_enlace }}
+{{ macro_teclado_incrustado }}
 
 # Instrucciones
 
@@ -66,4 +65,6 @@ function copiar_codigo(){
  navigator.clipboard.writeText(texto);
  alert("Código copiado");
 }
+
+ 
 </script>
