@@ -38,21 +38,22 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 {% endcapture %}
 
 {{ macro_enunciado }}
-<!-- elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61) -->
+<!-- elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61) YA NO -->
 {{ macro_teclado_enlace }}
 {{ macro_teclado_incrustado }}
 
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
-2. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
-3. Pon un nombre a tu pregunta.
-4. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
-5. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
-6. En el campo 'Respuesta' indica la respuesta y su calificación.
+1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (para el StudenQuiz)</button> <button onclick="mostrar_div2()">Con teclado incrustado</button>
+2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
+3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
+4. Pon un nombre a tu pregunta.
+5. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
+6. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
+7. En el campo 'Respuesta' indica la respuesta y su calificación.
 
-Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
+Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
 <textarea id="codigo" style="display:none;">
 {{ macro_enunciado }}
@@ -66,6 +67,15 @@ function copiar_codigo(){
  alert("Código copiado");
 }
 
+function mostrar_div1(){
+ document.getElementById("div2").style.display = "none";
+ document.getElementById("div1").style.display = "block";
+}
+function mostrar_div2(){
+ document.getElementById("div1").style.display = "none";
+ document.getElementById("div2").style.display = "block";
+}
+ 
 document.getElementById("div2").style.display = "none";
  
 </script>
