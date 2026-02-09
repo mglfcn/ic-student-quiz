@@ -66,5 +66,6 @@ function copiar_codigo(){
  alert("Código copiado");
 }
 
+document.getElementById("div2").style.display = "none";
  
 </script>
