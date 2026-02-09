@@ -41,7 +41,7 @@ Pulsa en el enlace para acceder al teclado en otra pestaña.
  
 {% endcapture %}
 {{ macro_enunciado }}
-// elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61)
+<!-- elegir entre macro_teclado_incrustado y macro_teclado_enlace (también en el texarea linea 61) -->
 {{ macro_teclado_enlace }}
 
 # Instrucciones
