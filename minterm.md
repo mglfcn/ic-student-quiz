@@ -5,13 +5,14 @@ title: IC Student Quiz - minterm
 
 # Ejemplo de ejercicio: minterm de 6 variables
 
-{% capture macro %}
+{% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Sea Z una función booleana de 6 variables Z(x5, x4, ... x0).<br>
 Indica cuál es su minterm m<sub>i</sub>
 </div>
+{% endcapture %}
 
-<!-- 
+{% capture macro_teclado_incrustado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Formato de respuesta: minterm de 6 variables
  
@@ -26,8 +27,12 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
  m6v
 </div>
 
-// include mi_script.md %}
- -->
+{% include mi_script.md %}
+ 
+{% endcapture %}
+
+{% capture macro_teclado_enlace %}
+
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Formato de respuesta: minterm de 6 variables <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">m6v</a></u></b><br>
 Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
@@ -36,7 +41,8 @@ Pulsa en el enlace para acceder al teclado en otra pestaña.
 </div>
  
 {% endcapture %}
-{{ macro }}
+{{ macro_enunciado }}
+{{ macro_teclado_incrustado }}
 
 # Instrucciones
 
@@ -51,7 +57,8 @@ Para crear una pregunta Moodle de este estilo:
 Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
 <textarea id="codigo" style="display:none;">
-{{ macro }}
+{{ macro_enunciado }}
+{{ macro_teclado_incrustado }}
 </textarea>
 
 <script>
