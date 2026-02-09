@@ -24,7 +24,6 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 
  <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
  </iframe>
- m6v
 </div>
 
 {% include mi_script.md %}
