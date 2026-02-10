@@ -7,7 +7,8 @@ title: IC Student Quiz - TV a solo NANDs
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Obtén la [1ªFC/2ªFC/mínima suma de productos/mínimo producto de sumas] de la función Z y exprésala usando solo puertas {NAND,NOT}.<br>Una vez calculada la forma canónica/mínima solo puedes aplicar  el teorema de involución y la ley de De Morgan.<br><table style="text-align: center;" border="1" frame="border" rules="groups">
+Obtén la [1ªFC/2ªFC/mínima suma de productos/mínimo producto de sumas] de la función Z y exprésala usando solo puertas {NAND,NOT}.<br>Una vez calculada la forma canónica/mínima solo puedes aplicar  el teorema de involución y la ley de De Morgan.<br><br>
+    <table style="text-align: center;" border="1" frame="border" rules="groups">
     <colgroup align="center" span="3">
     </colgroup>
     <thead>
@@ -124,6 +125,17 @@ Para crear una pregunta Moodle de este estilo:
 8. Para permitir permutaciones teclea la respuesta en uno de los formularios de abajo y te indicará el valor a poner en el campo 'Respuesta 2'.
 
 Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
+
+<table>
+  <tr>
+    <td style="padding: 15px 25px; vertical-align: top;">
+      <iframe style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_sdp_NAND.html" allow="clipboard-read; clipboard-write"></iframe>  
+    </td>
+    <td style="padding: 15px 25px; vertical-align: top;">
+      <iframe style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
+    </td>
+  </tr>
+</table
 
 <textarea id="codigo_div1" style="display:none;">
 {{ macro_enunciado }}
