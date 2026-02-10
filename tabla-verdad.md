@@ -13,7 +13,12 @@ Obtén la tabla de verdad de ...
 
 {% capture macro_formato_y_ejemplo %}
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_TV.html">vector de bits de una TV</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_TV.html">(TV)</a></u></b><br>
-Ejemplo: 00011101<br><br>
+<table>
+  <tr>
+    <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
+    <td style="padding: 15px 25px; vertical-align: top;">00011101</td>
+  </tr>
+</table><br><br>
 {% endcapture %}
 
 {% capture macro_teclado_enlace %}
