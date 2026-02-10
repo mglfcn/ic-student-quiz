@@ -21,7 +21,7 @@ Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND
     <td style="padding: 15px 25px; vertical-align: top;">((a↑b’)↑c)’</td>
     <td style="padding: 15px 25px; vertical-align: top;">a↑b’↑c</td>
   </tr>
-</table><br><br>
+</table><br>
 {% endcapture %}
 
 {% capture macro_teclado_enlace %}
