@@ -128,11 +128,11 @@ Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar
 
 <table>
   <tr>
-    <td width="500" height="350" style="padding: 10px 20px; vertical-align: top;">
-      <iframe style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_sdp_NAND.html" allow="clipboard-read; clipboard-write"></iframe>  
+    <td style="padding: 10px 20px; vertical-align: top;">
+      <iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_sdp_NAND.html" allow="clipboard-read; clipboard-write"></iframe>  
     </td>
-    <td width="500" height="350" style="padding: 10px 20px; vertical-align: top;">
-      <iframe style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
+    <td style="padding: 10px 20px; vertical-align: top;">
+      <iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
     </td>
   </tr>
 </table>
