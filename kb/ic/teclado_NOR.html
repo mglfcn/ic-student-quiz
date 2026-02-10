@@ -1,0 +1,137 @@
+
+    <script type="text/javascript">
+	
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_NOR
+	    // Expresión de 4 variables (a, b, c, d) usando solo puertas NOR
+	    // Ejemplo: (a↓b'↓d)↓c'
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_NOR.html
+	    // Versión: 22/11/2022
+	    /////////////////////////////////////////////////////////////////
+		
+        var parentesis = 0;
+		var indice = 0;
+
+        function nand() {
+            document.getElementById("result").textContent += "↓";
+            document.getElementById("result2").textContent = "";
+            variable();
+        }
+
+        function not() {
+            document.getElementById("result").textContent += "'";
+            document.getElementById("result2").textContent = "";
+            document.getElementById("idnot").disabled = true;
+        }
+
+        function operador_o_not() {
+            document.getElementById("idnot").disabled = false;
+            if (indice < 4) document.getElementById("idnand").disabled = false;
+            document.getElementById("ida").disabled = true;
+            document.getElementById("idb").disabled = true;
+            document.getElementById("idc").disabled = true;
+            document.getElementById("idd").disabled = true;
+            document.getElementById("idpar_a").disabled = true;
+            if (parentesis)
+                document.getElementById("idpar_c").disabled = false;
+        }
+
+        function variable() {
+            document.getElementById("idnot").disabled = true;
+            document.getElementById("idnand").disabled = true;
+			variable2();
+            document.getElementById("idpar_a").disabled = false;
+            document.getElementById("idpar_c").disabled = true;
+        }
+
+		function variable2() {
+            if (indice == 0) document.getElementById("ida").disabled = false;
+            if (indice <= 1) document.getElementById("idb").disabled = false;
+            if (indice <= 2) document.getElementById("idc").disabled = false;
+            if (indice <= 3) document.getElementById("idd").disabled = false;
+		}
+
+        function a() {
+            document.getElementById("result").textContent += "a";
+            document.getElementById("result2").textContent = "";
+			indice = 1;
+            operador_o_not();
+        }
+
+        function b() {
+            document.getElementById("result").textContent += "b";
+            document.getElementById("result2").textContent = "";
+			indice = 2;
+            operador_o_not();
+        }
+
+        function c() {
+            document.getElementById("result").textContent += "c";
+            document.getElementById("result2").textContent = "";
+			indice = 3;
+            operador_o_not();
+        }
+
+        function d() {
+            document.getElementById("result").textContent += "d";
+            document.getElementById("result2").textContent = "";
+			indice = 4;
+            operador_o_not();
+        }
+
+        function par_a() {
+            document.getElementById("result").textContent += "(";
+            document.getElementById("result2").textContent = "";
+			indice = 0;
+			variable2();
+            parentesis++;
+            //document.getElementById("idpar_c").disabled = false;
+            document.getElementById("idpar_a").disabled = false;
+            document.getElementById("idcopiar").disabled = true;
+        }
+
+        function par_c() {
+            document.getElementById("result").textContent += ")";
+            document.getElementById("result2").textContent = "";
+			indice = 0;
+            document.getElementById("idnand").disabled = false;
+            document.getElementById("idnot").disabled = false;
+            parentesis--;
+            if (!parentesis) {
+                document.getElementById("idpar_c").disabled = true;
+                document.getElementById("idcopiar").disabled = false;
+            }
+        }
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+			indice = 0;
+            variable();
+            parentesis = 0;
+            document.getElementById("idpar_c").disabled = true;
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<input id="idnand" type="button" value="↓" onclick="nand()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="ida" type="button" value="a" onclick="a()" style="font-size:30px; height:50px; width:50px">
+<input id="idb" type="button" value="b" onclick="b()" style="font-size:30px; height:50px; width:50px">
+<input id="idc" type="button" value="c" onclick="c()" style="font-size:30px; height:50px; width:50px">
+<input id="idd" type="button" value="d" onclick="d()" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="idpar_a" type="button" value="(" onclick="par_a()" style="font-size:30px; height:50px; width:50px">
+<input id="idpar_c" type="button" value=")" onclick="par_c()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
