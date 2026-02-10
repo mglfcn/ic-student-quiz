@@ -44,7 +44,7 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en el StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
+1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
 2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
 3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
 4. Pon un nombre a tu pregunta.
