@@ -14,7 +14,13 @@ Solo puedes aplicar el teorema de involución y la ley de De Morgan.
 
 {% capture macro_formato_y_ejemplo %}
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND.html">exp usando solo {NAND,NOT}</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_NAND.html">(NAND)</a></u></b><br>
-Ejemplos:  ((a↑b’)↑c)’   a↑b’↑c<br><br>
+Ejemplos:  
+<table style="border-collapse: collapse;">
+  <tr>
+    <td style="border: 1px solid black; padding: 5px;">((a↑b’)↑c)’</td>
+    <td style="border: 1px solid black; padding: 5px;">a↑b’↑c</td>
+  </tr>
+</table><br><br>
 {% endcapture %}
 
 {% capture macro_teclado_enlace %}
