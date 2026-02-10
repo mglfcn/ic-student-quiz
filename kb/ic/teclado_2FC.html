@@ -1,0 +1,136 @@
+
+<meta charset="UTF-8">
+<p>
+    <script type="text/javascript">
+	
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_2FC
+	    // Expresión en 2ª Forma Canónica (producto de Maxterms)  
+	    // Ejemplo: M0·M2·M3
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_2FC.html
+	    // Versión: 22/09/2023
+	    /////////////////////////////////////////////////////////////////	
+		
+        var indice = 0;
+
+        function or() {
+            document.getElementById("result").textContent += "·";
+            document.getElementById("result2").textContent = "";
+            variable();
+        }
+
+
+        function operador_o_not() {
+            if (indice < 8) {
+                document.getElementById("idor").disabled = false;
+            }
+            document.getElementById("idm6").disabled = true;
+            document.getElementById("idm7").disabled = true;
+            document.getElementById("idm5").disabled = true;
+            document.getElementById("idm4").disabled = true;
+            document.getElementById("idm3").disabled = true;
+            document.getElementById("idm2").disabled = true;
+            document.getElementById("idm1").disabled = true;
+            document.getElementById("idm0").disabled = true;
+        }
+
+        function variable() {
+            document.getElementById("idor").disabled = true;
+            if (indice <= 7) document.getElementById("idm7").disabled = false;
+            if (indice <= 6) document.getElementById("idm6").disabled = false;
+            if (indice <= 5) document.getElementById("idm5").disabled = false;
+            if (indice <= 4) document.getElementById("idm4").disabled = false;
+            if (indice <= 3) document.getElementById("idm3").disabled = false;
+            if (indice <= 2) document.getElementById("idm2").disabled = false;
+            if (indice <= 1) document.getElementById("idm1").disabled = false;
+            if (indice == 0) document.getElementById("idm0").disabled = false;
+
+        }
+
+        function m7() {
+            document.getElementById("result").textContent += "M7";
+            document.getElementById("result2").textContent = "";
+            indice = 8;
+            operador_o_not();
+        }
+
+        function m6() {
+            document.getElementById("result").textContent += "M6";
+            document.getElementById("result2").textContent = "";
+            indice = 7;
+            operador_o_not();
+        }
+
+        function m5() {
+            document.getElementById("result").textContent += "M5";
+            document.getElementById("result2").textContent = "";
+            indice = 6;
+            operador_o_not();
+        }
+
+        function m4() {
+            document.getElementById("result").textContent += "M4";
+            document.getElementById("result2").textContent = "";
+            indice = 5;
+            operador_o_not();
+        }
+
+        function m3() {
+            document.getElementById("result").textContent += "M3";
+            document.getElementById("result2").textContent = "";
+            indice = 4;
+            operador_o_not();
+        }
+
+        function m2() {
+            document.getElementById("result").textContent += "M2";
+            document.getElementById("result2").textContent = "";
+            indice = 3;
+            operador_o_not();
+        }
+
+        function m1() {
+            document.getElementById("result").textContent += "M1";
+            document.getElementById("result2").textContent = "";
+            indice = 2;
+            operador_o_not();
+        }
+
+        function m0() {
+            document.getElementById("result").textContent += "M0";
+            document.getElementById("result2").textContent = "";
+            indice = 1;
+            operador_o_not();
+        }
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+            indice = 0;
+            variable();
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<input id="idor" type="button" value="·" onclick="or()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="idm0" type="button" value="M0" onclick="m0()" style="font-size:30px; height:50px; width:55px">
+<input id="idm1" type="button" value="M1" onclick="m1()" style="font-size:30px; height:50px; width:55px">
+<input id="idm2" type="button" value="M2" onclick="m2()" style="font-size:30px; height:50px; width:55px">
+<input id="idm3" type="button" value="M3" onclick="m3()" style="font-size:30px; height:50px; width:55px">
+<input id="idm4" type="button" value="M4" onclick="m4()" style="font-size:30px; height:50px; width:55px">
+<input id="idm5" type="button" value="M5" onclick="m5()" style="font-size:30px; height:50px; width:55px">
+<input id="idm6" type="button" value="M6" onclick="m6()" style="font-size:30px; height:50px; width:55px">
+<input id="idm7" type="button" value="M7" onclick="m7()" style="font-size:30px; height:50px; width:55px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:55px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:55px">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
