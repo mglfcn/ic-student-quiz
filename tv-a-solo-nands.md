@@ -126,16 +126,9 @@ Para crear una pregunta Moodle de este estilo:
 
 Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
-<table>
-  <tr>
-    <td style="padding: 10px 20px; vertical-align: top;">
-      <iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_sdp_NAND.html" allow="clipboard-read; clipboard-write"></iframe>  
-    </td>
-    <td style="padding: 10px 20px; vertical-align: top;">
-      <iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
-    </td>
-  </tr>
-</table>
+<iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_sdp_NAND.html" allow="clipboard-read; clipboard-write"></iframe>  
+<iframe width="500" height="350" style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
+
 
 <textarea id="codigo_div1" style="display:none;">
 {{ macro_enunciado }}
