@@ -16,7 +16,8 @@ Indica cuál es su minterm m<sub>i</sub>
 <div id="div1" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">(m6v)</a></u></b><br>
 Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
-Pulsa en el enlace para acceder al teclado. Luego pulsa el botón '← Atrás' del navegador para volver.
+Pulsa en el enlace para acceder al teclado.<br>
+Luego pulsa el botón '← Atrás' del navegador para volver.
 </div>
 {% endcapture %}
 
@@ -43,7 +44,7 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Solo con teclado enlazado (sí funciona en el StudentQuiz)</button>   <button onclick="mostrar_div2()">También con teclado incrustado (no funciona en StudentQuiz)</button>
+1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en el StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
 2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
 3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
 4. Pon un nombre a tu pregunta.
@@ -68,11 +69,11 @@ function copiar_codigo(){
  if (version_div==1){
   const texto = document.getElementById("codigo_div1").value;
   navigator.clipboard.writeText(texto);
-  alert("Código con teclado enlazado copiado (sí funciona en StudentQuiz)");
+  alert("Copiado código con teclado enlazado (sí funciona en StudentQuiz)");
  }else {
   const texto = document.getElementById("codigo_div2").value;
   navigator.clipboard.writeText(texto);
-  alert("Código con teclado incrustado copiado (no funciona en StudentQuiz)");
+  alert("Copiado código con teclado incrustado (no funciona en StudentQuiz)");
  }
 }
 
