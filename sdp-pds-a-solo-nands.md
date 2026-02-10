@@ -13,7 +13,7 @@ Solo puedes aplicar el teorema de involución y la ley de De Morgan.
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_NAND.html">(NAND)</a></u></b><br>
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND.html">exp usando solo {NAND,NOT}</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_NAND.html">(NAND)</a></u></b><br>
 Ejemplos: | ((a↑b’)↑c)’ | a↑b’↑c<br><br> |
 {% endcapture %}
 
