@@ -15,11 +15,11 @@ Solo puedes aplicar el teorema de involución y la ley de De Morgan.
 {% capture macro_formato_y_ejemplo %}
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND.html">exp usando solo {NAND,NOT}</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_NAND.html">(NAND)</a></u></b><br>
   
-<table style="border-collapse: collapse;">
+<table>
   <tr>
-    <td style="border: 1px solid black; padding: 5px;">Ejemplos:</td>
-    <td style="border: 1px solid black; padding: 5px;">((a↑b’)↑c)’</td>
-    <td style="border: 1px solid black; padding: 5px;">a↑b’↑c</td>
+    <td style="padding: 10px 20px; background-color: #ededed; vertical-align: middle; font-weight: bold;">Ejemplos:</td>
+    <td style="padding: 10px 20px; background-color: #f9f9f9; vertical-align: middle; font-family: monospace;">((a↑b’)↑c)’</td>
+    <td style="padding: 10px 20px; background-color: #ffffff; vertical-align: middle; font-family: monospace;">a↑b’↑c</td>
   </tr>
 </table><br><br>
 {% endcapture %}
