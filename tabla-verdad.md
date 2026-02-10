@@ -18,7 +18,7 @@ Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_TV.h
     <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
     <td style="padding: 15px 25px; vertical-align: top;">00011101</td>
   </tr>
-</table><br><br>
+</table><br>
 {% endcapture %}
 
 {% capture macro_teclado_enlace %}
