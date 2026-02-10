@@ -14,21 +14,20 @@ Indica cuál es su minterm m<sub>i</sub>
 
 {% capture macro_teclado_enlace %}
 <div id="div1" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">m6v</a></u></b><br>
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">(m6v)</a></u></b><br>
 Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
-Pulsa en el enlace para acceder al teclado en otra pestaña.
+Pulsa en el enlace para acceder al teclado. Luego pulsa el botón '← Atrás' del navegador para volver.
 </div>
 {% endcapture %}
 
 {% capture macro_teclado_incrustado %}
 <div id="div2" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Formato de respuesta: minterm de 6 variables
- 
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_m6v.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">(m6v)</a></u></b><br>
+Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 <select id="pagina" onchange="cargarPagina()">
  <option value="teclado_m6v.html" data-w="400" data-h="250" data-h-movil="320">m6v</option>
-</select><br>
-Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
-<button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
+</select>
+  <button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
 
  <iframe id="visor" style="border:none; max-width: 100%;" allow="clipboard-read; clipboard-write">
  </iframe>
@@ -44,7 +43,7 @@ Ejemplo: x5’·x4·x3’·x2·x1’·x0<br>
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (para el StudentQuiz)</button> <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
+1. Elige la versión <button onclick="mostrar_div1()">Solo con teclado enlazado (sí funciona en el StudentQuiz)</button>   <button onclick="mostrar_div2()">También con teclado incrustado (no funciona en StudentQuiz)</button>
 2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
 3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
 4. Pon un nombre a tu pregunta.
