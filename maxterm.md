@@ -14,7 +14,7 @@ Indica cuál es su Maxterm M<sub>i</sub>
 
 {% capture macro_formato_y_ejemplo %}
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_M6v.html">Maxterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_M6v.html">(M6v)</a></u></b><br>
-Ejemplo: x5’+x4+x3’+x2+x1’+x0<br>
+Ejemplo: x5’+x4+x3’+x2+x1’+x0<br><br>
 {% endcapture %}
 
 {% capture macro_teclado_enlace %}
