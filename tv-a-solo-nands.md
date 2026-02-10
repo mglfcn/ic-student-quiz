@@ -135,7 +135,7 @@ Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar
       <iframe style="border:none;" src="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_regexp_pds_NAND.html" allow="clipboard-read; clipboard-write"></iframe> 
     </td>
   </tr>
-</table
+</table>
 
 <textarea id="codigo_div1" style="display:none;">
 {{ macro_enunciado }}
