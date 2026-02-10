@@ -12,7 +12,7 @@ Obtén la 1ª F.C. de ...
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_1FC.html">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_1FC.html">(1FC)</a></u></b><br>
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_1FC.html">exp en 1ª Forma Canónica (minterms ordenados)</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_1FC.html">(1FC)</a></u></b><br>
 Ejemplo: m0+m1+m5<br><br>
 {% endcapture %}
 
