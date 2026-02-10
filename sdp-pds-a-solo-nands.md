@@ -17,9 +17,9 @@ Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_NAND
   
 <table>
   <tr>
-    <td style="padding: 15px 25px; background-color: #f4f4f4; vertical-align: top;">Ejemplos:</td>
-    <td style="padding: 15px 25px; background-color: #f4f4f4; vertical-align: top;">((a↑b’)↑c)’</td>
-    <td style="padding: 15px 25px; background-color: #f4f4f4; vertical-align: top;">a↑b’↑c</td>
+    <td style="padding: 15px 25px; vertical-align: top;">Ejemplos:</td>
+    <td style="padding: 15px 25px; vertical-align: top;">((a↑b’)↑c)’</td>
+    <td style="padding: 15px 25px; vertical-align: top;">a↑b’↑c</td>
   </tr>
 </table><br><br>
 {% endcapture %}
