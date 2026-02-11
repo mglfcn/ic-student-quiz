@@ -1,0 +1,130 @@
+
+<meta charset="UTF-8">
+    <script type="text/javascript">
+		
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_sdp2
+	    // Expresión suma de productos de estado codificado con un bit (one-hot) Q0-Q4 y una entrada X.
+	    // Ejemplo: Q1·X+Q2·X'+Q0
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_sdp2.html
+	    // Versión: 15/11/2024
+	    /////////////////////////////////////////////////////////////////		
+		
+		var indice = 0;
+
+        function and() {
+            document.getElementById("result").textContent += "·";
+            document.getElementById("result2").textContent = "";
+            variable();
+        }
+        function or() {
+            document.getElementById("result").textContent += "+";
+            document.getElementById("result2").textContent = "";
+			indice=0;
+            variable();
+        }
+
+        function not() {
+            document.getElementById("result").textContent += "'";
+            document.getElementById("result2").textContent = "";
+            document.getElementById("idnot").disabled = true;
+        }
+
+        function operador_o_not() {
+            document.getElementById("idnot").disabled = false;
+            if (indice < 6) document.getElementById("idand").disabled = false;
+            document.getElementById("idor").disabled = false;
+            document.getElementById("ida").disabled = true;
+            document.getElementById("idb").disabled = true;
+            document.getElementById("idc").disabled = true;
+            document.getElementById("idd").disabled = true;
+            document.getElementById("ide").disabled = true;
+            document.getElementById("idf").disabled = true;
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function variable() {
+            document.getElementById("idnot").disabled = true;
+            document.getElementById("idand").disabled = true;
+            document.getElementById("idor").disabled = true;
+            if (indice == 0) document.getElementById("ida").disabled = false;
+            if (indice <= 1) document.getElementById("idb").disabled = false;
+            if (indice <= 2) document.getElementById("idc").disabled = false;
+            if (indice <= 3) document.getElementById("idd").disabled = false;
+            if (indice <= 4) document.getElementById("ide").disabled = false;
+            if (indice <= 5) document.getElementById("idf").disabled = false;
+            document.getElementById("idcopiar").disabled = true;
+        }
+
+        function a() {
+            document.getElementById("result").textContent += "Q0";
+            document.getElementById("result2").textContent = "";
+			indice = 5;
+            operador_o_not();
+        }
+
+        function b() {
+            document.getElementById("result").textContent += "Q1";
+            document.getElementById("result2").textContent = "";
+			indice = 5;
+            operador_o_not();
+        }
+
+        function c() {
+            document.getElementById("result").textContent += "Q2";
+            document.getElementById("result2").textContent = "";
+			indice = 5;
+            operador_o_not();
+        }
+
+        function d() {
+            document.getElementById("result").textContent += "Q3";
+            document.getElementById("result2").textContent = "";
+			indice = 5;
+            operador_o_not();
+        }
+        function ee() {
+            // parece que moodle no admite una función que se llame "e"
+            document.getElementById("result").textContent += "Q4";
+            document.getElementById("result2").textContent = "";
+			indice = 5;
+            operador_o_not();
+        }
+        function f() {
+            document.getElementById("result").textContent += "X";
+            document.getElementById("result2").textContent = "";
+			indice = 6;
+            operador_o_not();
+        }
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+			indice = 0;
+            variable();
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<input id="idand" type="button" value="·" onclick="and()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idor"  type="button" value="+" onclick="or()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="ida" type="button" value="Q0" onclick="a()" style="font-size:30px; height:50px; width:50px">
+<input id="idb" type="button" value="Q1" onclick="b()" style="font-size:30px; height:50px; width:50px">
+<input id="idc" type="button" value="Q2" onclick="c()" style="font-size:30px; height:50px; width:50px">
+<input id="idd" type="button" value="Q3" onclick="d()" style="font-size:30px; height:50px; width:50px">
+<input id="ide" type="button" value="Q4" onclick="ee()" style="font-size:30px; height:50px; width:50px">
+<input id="idf" type="button" value="X" onclick="f()" style="font-size:30px; height:50px; width:50px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" disabled="true" style="height:50px; width:50px">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
