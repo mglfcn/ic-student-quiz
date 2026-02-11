@@ -1,0 +1,45 @@
+
+<meta charset="UTF-8">
+<p>
+
+    <script type="text/javascript">
+ 
+     /////////////////////////////////////////////////////////////////
+     // Autor: Luis M. Ramos luisma@unizar.es
+     // Nombre: teclado_regexp_pds  
+     // calcula 'Respuesta 2' para permitir permutaciones en pds
+     // ejemplo (a+b')·(a'+b)  -->  [[_\(a\+b'\)_·_\(a'\+b\)_]]
+     // url: https://webdiis.unizar.es/~luisma/ic/teclado_regexp_pds.html
+     // Versión: 27/03/2025
+     /////////////////////////////////////////////////////////////////
+  
+        function convertir() {
+            document.getElementById("result").textContent = transformarTexto(document.getElementById("resp").value);
+            document.getElementById("result2").textContent = "";
+        }
+
+        function transformarTexto(celda) {
+    return `[[_${celda
+        .replace(/\+/g, '\\+')  // Reemplaza "+" con "\+"
+        .replace(/\(/g, '\\(')   // Reemplaza "(" con "\("
+        .replace(/\)/g, '\\)')   // Reemplaza ")" con "\)"
+        .replace(/·/g, '_·_')    // Reemplaza "·" con "_·_"
+    }_]]`;
+}
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+            document.getElementById("num").value= "";
+        }
+
+    </script>
+</p>Teclea tu respuesta en formato pds y pulsa el botón para calcular 'Respuesta 2'.<br>
+<br>
+<span style="font-size:20px" ></span><input id="resp" type="text" value="(a+b')·(a'+b)" style="font-size:20px; height:50px; width:150px">
+<input id="resp2" type="button" value="convertir" onclick="convertir()" style="font-size:20px; height:50px; width:150px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+
+<div id="result" style="font-size:20px;"></div>
+<div id="result2"></div>
