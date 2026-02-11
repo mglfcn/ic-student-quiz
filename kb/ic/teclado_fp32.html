@@ -1,0 +1,61 @@
+
+<meta charset="UTF-8">
+<p>
+    <script type="text/javascript">
+
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_fp32
+	    // Vector de 32 bits agrupado para ser interpretado como fp32:
+	    // signo(1), mantisa (4+4) y exponente (4+4+4+4+4+3)
+	    // Ejemplo: 0 0110 1111 0000 1111 0001 1100 0111 101
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_fp32.html
+	    // Versión: 18/10/2022
+	    /////////////////////////////////////////////////////////////////	
+
+        function b(id) {
+			var long=document.getElementById("result").textContent.length;
+
+			if (long == 1 || long == 6 || long == 11 || long == 16 || long == 21 || long == 26 || long == 31 || long == 36){
+              document.getElementById("result").textContent += " ";
+			}
+			document.getElementById("result").textContent += id;
+			
+			after_click();
+        }
+
+		function after_click(){
+            document.getElementById("result2").textContent = "";
+			if (document.getElementById("result").textContent.length == 40) {
+              document.getElementById("idcopiar").disabled = false;
+              document.getElementById("0").disabled = true;
+              document.getElementById("1").disabled = true;
+		    } else {
+		      document.getElementById("idcopiar").disabled = true;
+		    }
+
+		}
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+			document.getElementById("idcopiar").disabled = true;
+            document.getElementById("0").disabled = false;
+            document.getElementById("1").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<br>
+<input id="0" type="button" value="0" onclick="b('0')" style="font-size:30px; height:50px; width:50px">
+<input id="1" type="button" value="1" onclick="b('1')" style="font-size:30px; height:50px; width:50px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px" disabled="true">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
