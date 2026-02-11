@@ -1,0 +1,174 @@
+
+Producto de sumas (pds)
+<script type="text/javascript">
+		/////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_pds
+	    // Expresión producto de sumas de literales de 4 variables (a, b, c, d).
+	    // En cada suma los literales se ordenan automáticamente.
+	    // Los paréntesis aparecen automáticamente.
+	    // Ejemplo: (a+c')·(a+d')·a'
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_pds.html
+	    // Versión: 9/4/2025 (permite deshacer y borrar sumas)
+	    /////////////////////////////////////////////////////////////////
+    let currentSum = [];
+    let fullExpression = [];
+    let history = [];
+
+    function showNotification(message) {
+        const notif = document.getElementById('notification');
+        notif.textContent = message;
+        notif.style.display = 'block';
+        setTimeout(() => {
+            notif.style.display = 'none';
+        }, 10000);
+    }
+
+    function saveHistory() {
+        history.push({
+            full: JSON.parse(JSON.stringify(fullExpression)),
+            current: [...currentSum]
+        });
+    }
+
+    function undo() {
+        if (history.length === 0) {
+            showNotification('No hay acciones para deshacer.');
+            return;
+        }
+        const last = history.pop();
+        fullExpression = last.full;
+        currentSum = last.current;
+        updateDisplay();
+    }
+
+    function addVariable(varName) {
+        saveHistory();
+        const baseVar = varName.replace("'", '');
+        const existingVars = currentSum.map(v => v.replace("'", ''));
+
+        if (existingVars.includes(baseVar)) {
+            showNotification(`La variable ${baseVar} ya está en esta suma.`);
+            return;
+        }
+
+        currentSum.push(varName);
+        currentSum.sort((a, b) => a.replace("'", '').localeCompare(b.replace("'", '')));
+        updateDisplay();
+    }
+
+    function addOperator(op) {
+        if (op === '·') {
+            if (currentSum.length === 0) return;
+            saveHistory();
+            fullExpression.push([...currentSum]);
+            currentSum = [];
+        }
+        updateDisplay();
+    }
+
+    function clearExpression() {
+        saveHistory();
+        currentSum = [];
+        fullExpression = [];
+        updateDisplay();
+    }
+
+    function formatSum(sumArray, useParens = true) {
+        if (!useParens || sumArray.length === 1) return sumArray.join('+');
+        return `(${sumArray.join('+')})`;
+    }
+
+    function formatSumParens(sumArray) {
+        if (sumArray.length === 1) return sumArray.join('+');
+        return `(${sumArray.join('+')})`;
+    }
+
+
+    function updateDisplay() {
+        const container = document.getElementById('expression');
+        container.innerHTML = '';
+
+        const totalSums = fullExpression.length + (currentSum.length > 0 ? 1 : 0);
+        const shouldUseParens = totalSums > 1;
+
+        fullExpression.forEach((sumArray, i) => {
+            const term = document.createElement('span');
+            term.className = 'term';
+            term.setAttribute("style", "display: inline-block; margin-right: 10px; background: #e8e8e8; padding: 5px 10px; border-radius: 5px;");
+
+
+            const sumSpan = document.createElement('span');
+            sumSpan.textContent = formatSum(sumArray, shouldUseParens);
+
+            // Simulación de hover
+            term.onmouseenter = () => term.style.backgroundColor = '#cdd';
+            term.onmouseleave = () => term.style.backgroundColor = '#e8e8e8';
+
+            const deleteSpan = document.createElement('span');
+            deleteSpan.className = 'delete';
+            deleteSpan.textContent = '×';
+            deleteSpan.title = 'Eliminar';
+            deleteSpan.onclick = () => deleteTerm(i);
+            deleteSpan.setAttribute("style", "margin-left: 8px; color: red; font-weight: bold; cursor: pointer;");
+
+            term.appendChild(sumSpan);
+            term.appendChild(deleteSpan);
+
+            container.appendChild(term);
+            if (i < fullExpression.length - 1 || currentSum.length > 0) {
+                container.appendChild(document.createTextNode('·'));
+            }
+        });
+
+        if (currentSum.length > 0) {
+            const term = document.createElement('span');
+            term.className = 'term';
+            term.textContent = formatSum(currentSum, shouldUseParens);
+            container.appendChild(term);
+        }
+    }
+
+    function deleteTerm(index) {
+        saveHistory();
+        fullExpression.splice(index, 1);
+        updateDisplay();
+    }
+
+    function copyExpression() {
+        const totalSums = fullExpression.length + (currentSum.length > 0 ? 1 : 0);
+        const shouldUseParens = totalSums > 1;
+        //const parts = fullExpression.map(formatSum);
+        const parts = (shouldUseParens ? fullExpression.map(formatSumParens) : fullExpression.map(formatSum));
+
+        if (currentSum.length > 0) parts.push(formatSum(currentSum, shouldUseParens));
+        const expressionText = parts.join('·');
+        navigator.clipboard.writeText(expressionText)
+            .then(() => showNotification('Expresión copiada. Pégala en el campo \'Respuesta\'.'))
+            .catch(() => showNotification('No se pudo copiar la expresión.'));
+    }
+</script>
+
+<div class="buttons" style="margin-bottom: 15px;">
+    <button type="button" onclick="addVariable('a')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">a</button>
+    <button type="button" onclick="addVariable('a\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">a'</button>
+    <button type="button" onclick="addVariable('b')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">b</button>
+    <button type="button" onclick="addVariable('b\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">b'</button>
+    <button type="button" onclick="addVariable('c')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">c</button>
+    <button type="button" onclick="addVariable('c\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">c'</button>
+    <button type="button" onclick="addVariable('d')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">d</button>
+    <button type="button" onclick="addVariable('d\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">d'</button>
+</div>
+
+<div class="buttons" style="margin-bottom: 15px;">
+    <button type="button" title="Operador por defecto (si no pulsas ninguno)" onclick="addOperator('+')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">+ (OR)</button>
+    <button type="button" onclick="addOperator('·')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">· (AND)</button>
+    <button type="button" onclick="undo()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Deshacer</button>
+    <button type="button" onclick="clearExpression()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Borrar</button>
+    <button type="button" onclick="copyExpression()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Copiar</button>
+</div>
+
+<div>
+    <div id="expression" style="font-size: 18px; font-weight: bold; background-color: #f0f0f0; padding: 10px; border-radius: 6px; width: 100%; max-width: 600px;"></div>
+    <div id="notification" style="margin-top: 10px; padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; display: none; max-width: 600px;"></div>
+</div>
