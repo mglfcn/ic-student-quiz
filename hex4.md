@@ -15,7 +15,7 @@ Convierte ... a hexadecimal.
 Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_hex4.html">vector de 4 dígitos hexadecimales</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_hex4.html">(hex4)</a></u></b><br>
 <table>
   <tr>
-    <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
+    <td style="padding: 15px 25px; vertical-align: top;">Ejemplos:</td>
     <td style="padding: 15px 25px; vertical-align: top;">0xF015</td>
     <td style="padding: 15px 25px; vertical-align: top;">0x012A</td>
     <td style="padding: 15px 25px; vertical-align: top;">0x00FF</td>
@@ -35,7 +35,7 @@ Luego pulsa el botón '← Atrás' del navegador para volver.
 <div id="div2" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 {{ macro_formato_y_ejemplo }}
 <select id="pagina" onchange="cargarPagina()">
- <option value="teclado_hex4.html" data-w="400" data-h="250" data-h-movil="320">8b</option>
+ <option value="teclado_hex4.html" data-w="450" data-h="350" data-h-movil="400">8b</option>
 </select>
   <button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
 
