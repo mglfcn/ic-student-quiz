@@ -1,0 +1,78 @@
+
+<meta charset="UTF-8">
+<p>
+
+    <script type="text/javascript">
+		
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_oct3
+	    // Vector de 3 dígitos octales.
+	    // No permite copiar hasta que se hayan tecleado 3 dígitos octales.
+	    // Inicialmente aparece el prefijo 0
+	    // Ejemplo: 0147
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_oct3.html
+	    // Versión: 03/10/2023
+	    /////////////////////////////////////////////////////////////////
+
+        function b(id) {
+
+			document.getElementById("result").textContent += id;
+			
+			after_click();
+        }
+
+		function after_click(){
+            document.getElementById("result2").textContent = "";
+			if (document.getElementById("result").textContent.length == 4) {
+              document.getElementById("idcopiar").disabled = false;
+              document.getElementById("0").disabled = true;
+              document.getElementById("1").disabled = true;
+              document.getElementById("2").disabled = true;
+              document.getElementById("3").disabled = true;
+              document.getElementById("4").disabled = true;
+              document.getElementById("5").disabled = true;
+              document.getElementById("6").disabled = true;
+              document.getElementById("7").disabled = true;
+		    } else {
+		      document.getElementById("idcopiar").disabled = true;
+		    }
+
+		}
+
+        function borrar() {
+            document.getElementById("result").textContent = "0";
+            document.getElementById("result2").textContent = "";
+			document.getElementById("idcopiar").disabled = true;
+            document.getElementById("0").disabled = false;
+            document.getElementById("1").disabled = false;
+            document.getElementById("2").disabled = false;
+            document.getElementById("3").disabled = false;
+            document.getElementById("4").disabled = false;
+            document.getElementById("5").disabled = false;
+            document.getElementById("6").disabled = false;
+            document.getElementById("7").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<br>
+<input id="0" type="button" value="0" onclick="b('0')" style="font-size:30px; height:50px; width:50px">
+<input id="1" type="button" value="1" onclick="b('1')" style="font-size:30px; height:50px; width:50px">
+<input id="2" type="button" value="2" onclick="b('2')" style="font-size:30px; height:50px; width:50px">
+<input id="3" type="button" value="3" onclick="b('3')" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="4" type="button" value="4" onclick="b('4')" style="font-size:30px; height:50px; width:50px">
+<input id="5" type="button" value="5" onclick="b('5')" style="font-size:30px; height:50px; width:50px">
+<input id="6" type="button" value="6" onclick="b('6')" style="font-size:30px; height:50px; width:50px">
+<input id="7" type="button" value="7" onclick="b('7')" style="font-size:30px; height:50px; width:50px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:50px" disabled="true">
+
+<div id="result" style="font-size:30px;">0</div>
+<div id="result2"></div>
