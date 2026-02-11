@@ -1,0 +1,112 @@
+
+<meta charset="UTF-8">
+    <script type="text/javascript">
+  
+     /////////////////////////////////////////////////////////////////
+     // Autor: Luis M. Ramos luisma@unizar.es
+     // Nombre: teclado_sdp
+     // Expresión suma de productos de literales de 4 variables (a, b, c, d).
+     // En cada producto el teclado obliga a que las variables se tecleen alfabéticamente.
+     // Ejemplo: a·c'·d+b+c'·d
+     // url: https://webdiis.unizar.es/~luisma/ic/teclado_sdp-old.html
+     // Versión: 20/10/2022
+     /////////////////////////////////////////////////////////////////    
+  
+  var indice = 0;
+
+        function and() {
+            document.getElementById("result").textContent += "·";
+            document.getElementById("result2").textContent = "";
+            variable();
+        }
+        function or() {
+            document.getElementById("result").textContent += "+";
+            document.getElementById("result2").textContent = "";
+   indice=0;
+            variable();
+        }
+
+        function not() {
+            document.getElementById("result").textContent += "'";
+            document.getElementById("result2").textContent = "";
+            document.getElementById("idnot").disabled = true;
+        }
+
+        function operador_o_not() {
+            document.getElementById("idnot").disabled = false;
+            if (indice < 4) document.getElementById("idand").disabled = false;
+            document.getElementById("idor").disabled = false;
+            document.getElementById("ida").disabled = true;
+            document.getElementById("idb").disabled = true;
+            document.getElementById("idc").disabled = true;
+            document.getElementById("idd").disabled = true;
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function variable() {
+            document.getElementById("idnot").disabled = true;
+            document.getElementById("idand").disabled = true;
+            document.getElementById("idor").disabled = true;
+            if (indice == 0) document.getElementById("ida").disabled = false;
+            if (indice <= 1) document.getElementById("idb").disabled = false;
+            if (indice <= 2) document.getElementById("idc").disabled = false;
+            if (indice <= 3) document.getElementById("idd").disabled = false;
+            document.getElementById("idcopiar").disabled = true;
+        }
+
+        function a() {
+            document.getElementById("result").textContent += "a";
+            document.getElementById("result2").textContent = "";
+   indice = 1;
+            operador_o_not();
+        }
+
+        function b() {
+            document.getElementById("result").textContent += "b";
+            document.getElementById("result2").textContent = "";
+   indice = 2;
+            operador_o_not();
+        }
+
+        function c() {
+            document.getElementById("result").textContent += "c";
+            document.getElementById("result2").textContent = "";
+   indice = 3;
+            operador_o_not();
+        }
+
+        function d() {
+            document.getElementById("result").textContent += "d";
+            document.getElementById("result2").textContent = "";
+   indice = 4;
+            operador_o_not();
+        }
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+   indice = 0;
+            variable();
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<input id="idand" type="button" value="·" onclick="and()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idor"  type="button" value="+" onclick="or()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="ida" type="button" value="a" onclick="a()" style="font-size:30px; height:50px; width:50px">
+<input id="idb" type="button" value="b" onclick="b()" style="font-size:30px; height:50px; width:50px">
+<input id="idc" type="button" value="c" onclick="c()" style="font-size:30px; height:50px; width:50px">
+<input id="idd" type="button" value="d" onclick="d()" style="font-size:30px; height:50px; width:50px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" disabled="true" style="height:50px; width:50px">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
