@@ -1,0 +1,157 @@
+
+Suma de productos (sdp)
+<script type="text/javascript">
+    /////////////////////////////////////////////////////////////////
+    // Autor: Luis M. Ramos luisma@unizar.es
+    // Nombre: teclado_sdp
+    // Expresión suma de productos de literales de 4 variables (a, b, c, d).
+    // En cada producto los literales se ordenan automáticamente.
+    // Ejemplo: a·c'·d+b+c'·d
+    // url: https://webdiis.unizar.es/~luisma/ic/teclado_sdp.html
+    // Versión: 9/4/2025 (permite deshacer y borrar productos)
+    /////////////////////////////////////////////////////////////////
+    let currentProduct = [];
+    let fullExpression = [];
+    let history = [];
+
+    function showNotification(message) {
+        const notif = document.getElementById('notification');
+        notif.textContent = message;
+        notif.style.display = 'block';
+        setTimeout(() => {
+            notif.style.display = 'none';
+        }, 10000);
+    }
+
+    function saveHistory() {
+        history.push({
+            full: JSON.parse(JSON.stringify(fullExpression)),
+            current: [...currentProduct]
+        });
+    }
+
+    function undo() {
+        if (history.length === 0) {
+            showNotification('No hay acciones para deshacer.');
+            return;
+        }
+        const last = history.pop();
+        fullExpression = last.full;
+        currentProduct = last.current;
+        updateDisplay();
+    }
+
+    function addVariable(varName) {
+        saveHistory();
+        const baseVar = varName.replace("'", '');
+        const existingVars = currentProduct.map(v => v.replace("'", ''));
+
+        if (existingVars.includes(baseVar)) {
+            showNotification(`La variable ${baseVar} ya está en este producto.`);
+            return;
+        }
+
+        currentProduct.push(varName);
+        currentProduct.sort((a, b) => a.replace("'", '').localeCompare(b.replace("'", '')));
+        updateDisplay();
+    }
+
+    function addOperator(op) {
+        if (op === '+') {
+            if (currentProduct.length === 0) return;
+            saveHistory();
+            fullExpression.push([...currentProduct]);
+            currentProduct = [];
+        }
+        updateDisplay();
+    }
+
+    function clearExpression() {
+        saveHistory();
+        currentProduct = [];
+        fullExpression = [];
+        updateDisplay();
+    }
+
+    function formatProduct(productArray) {
+        return productArray.join('·');
+    }
+
+    function updateDisplay() {
+        const container = document.getElementById('expression');
+        container.innerHTML = '';
+
+        fullExpression.forEach((productArray, i) => {
+            const term = document.createElement('span');
+            term.className = 'term';
+            term.setAttribute("style", "display: inline-block; margin-right: 10px; background: #e8e8e8; padding: 5px 10px; border-radius: 5px;");
+            const productSpan = document.createElement('span');
+            productSpan.textContent = formatProduct(productArray);
+
+            // Simulación de hover
+            term.onmouseenter = () => term.style.backgroundColor = '#cdd';
+            term.onmouseleave = () => term.style.backgroundColor = '#e8e8e8';
+
+            const deleteSpan = document.createElement('span');
+            deleteSpan.className = 'delete';
+            deleteSpan.textContent = '×';
+            deleteSpan.title = 'Eliminar';
+            deleteSpan.onclick = () => deleteTerm(i);
+            deleteSpan.setAttribute("style", "margin-left: 8px; color: red; font-weight: bold; cursor: pointer;");
+
+            term.appendChild(productSpan);
+            term.appendChild(deleteSpan);
+
+            container.appendChild(term);
+            if (i < fullExpression.length - 1 || currentProduct.length > 0) {
+                container.appendChild(document.createTextNode('+'));
+            }
+        });
+
+        if (currentProduct.length > 0) {
+            const term = document.createElement('span');
+            term.className = 'term';
+            term.textContent = formatProduct(currentProduct);
+            container.appendChild(term);
+        }
+    }
+
+    function deleteTerm(index) {
+        saveHistory();
+        fullExpression.splice(index, 1);
+        updateDisplay();
+    }
+
+    function copyExpression() {
+        const parts = fullExpression.map(formatProduct);
+        if (currentProduct.length > 0) parts.push(formatProduct(currentProduct));
+        const expressionText = parts.join('+');
+        navigator.clipboard.writeText(expressionText)
+            .then(() => showNotification('Expresión copiada. Pégala en el campo \'Respuesta\'.'))
+            .catch(() => showNotification('No se pudo copiar la expresión.'));
+    }
+</script>
+
+<div class="buttons" style="margin-bottom: 15px;">
+    <button type="button" onclick="addVariable('a')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">a</button>
+    <button type="button" onclick="addVariable('a\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">a'</button>
+    <button type="button" onclick="addVariable('b')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">b</button>
+    <button type="button" onclick="addVariable('b\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">b'</button>
+    <button type="button" onclick="addVariable('c')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">c</button>
+    <button type="button" onclick="addVariable('c\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">c'</button>
+    <button type="button" onclick="addVariable('d')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">d</button>
+    <button type="button" onclick="addVariable('d\'')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">d'</button>
+</div>
+
+<div class="buttons" style="margin-bottom: 15px;">
+    <button type="button" onclick="addOperator('+')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">+ (OR)</button>
+    <button type="button" title="Operador por defecto (si no pulsas ninguno)" onclick="addOperator('·')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">· (AND)</button>
+    <button type="button" onclick="undo()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Deshacer</button>
+    <button type="button" onclick="clearExpression()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Borrar</button>
+    <button type="button" onclick="copyExpression()" style="margin: 5px; padding: 10px 15px; font-size: 16px;">Copiar</button>
+</div>
+
+<div>
+    <div id="expression" style="font-size: 18px; font-weight: bold; background-color: #f0f0f0; padding: 10px; border-radius: 6px; width: 100%; max-width: 600px;"></div>
+    <div id="notification" style="margin-top: 10px; padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; display: none; max-width: 600px;"></div>
+</div>
