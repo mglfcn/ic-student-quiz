@@ -3,11 +3,11 @@ layout: default
 title: IC Student Quiz - karnaugh-mps
 ---
 
-# Ejemplo de ejercicio: Obtener <i>mínimo producto de sumas</i> usando el método de Karnaugh
+# Ejemplo de ejercicio: Obtener *mínimo producto de sumas* usando el método de Karnaugh
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Aplica el método de Karnaugh y obtén el mínimo producto de sumas de la función Z.<br><br>
+Aplica el método de Karnaugh y obtén el *mínimo producto de sumas* de la función Z.<br><br>
 <table style="text-align: center;" border="1" frame="border" rules="groups">
     <colgroup align="center" span="4">
     </colgroup>
@@ -151,7 +151,7 @@ Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_pds.
 <table>
   <tr>
     <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
-    <td style="padding: 15px 25px; vertical-align: top;">(x3+x2’+x1)·(x2+x0’)·(x1+x0)</td>
+    <td style="padding: 15px 25px; vertical-align: top;">(a+b’+c)·(b+c’)·d'</td>
   </tr>
 </table><br>
 {% endcapture %}
