@@ -7,7 +7,7 @@ title: IC Student Quiz - karnaugh-msp
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Aplica el método de Karnaugh y obtén la mínima suma de productos de la función Z.<br>
+Aplica el método de Karnaugh y obtén la mínima suma de productos de la función Z.<br><br>
 <table style="text-align: center;" border="1" frame="border" rules="groups">
     <colgroup align="center" span="4">
     </colgroup>
@@ -167,7 +167,7 @@ Luego pulsa el botón '← Atrás' del navegador para volver.
 <div id="div2" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 {{ macro_formato_y_ejemplo }}
 <select id="pagina" onchange="cargarPagina()">
- <option value="teclado_sdp.html" data-w="400" data-h="250" data-h-movil="320">sdp</option>
+ <option value="teclado_sdp.html" data-w="600" data-h="300" data-h-movil="350">sdp</option>
  <option value="teclado_sdp-old.html" data-w="400" data-h="250" data-h-movil="320">sdp(old)</option>
 </select>
   <button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
