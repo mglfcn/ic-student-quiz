@@ -33,7 +33,7 @@ Luego pulsa el botón '← Atrás' del navegador para volver.
 <div id="div2" style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
 {{ macro_formato_y_ejemplo }}
 <select id="pagina" onchange="cargarPagina()">
- <option value="teclado_vector_suma2.html" data-w="400" data-h="300" data-h-movil="370">vector</option>
+ <option value="teclado_vector_suma2.html" data-w="500" data-h="400" data-h-movil="470">vector</option>
 </select>
   <button type="button" onclick="recargar()">↻ Recargar teclado</button><br>
 
