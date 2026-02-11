@@ -3,7 +3,7 @@ layout: default
 title: IC Student Quiz - karnaugh-msp
 ---
 
-# Ejemplo de ejercicio: Obtener *mínima suma de productos* usando el método de Karnaugh
+# Ejemplo de ejercicio: Obtener _mínima suma de productos_ usando el método de Karnaugh
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
@@ -145,7 +145,9 @@ Aplica el método de Karnaugh y obtén la mínima suma de productos de la funci�
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_sdp-old.html">suma de productos (var. ord. en productos)</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_sdp.html">(sdp)</a></u></b><br>
+Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_sdp.html">suma de productos (var. ord. en productos)</a> <b><u>
+<a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_sdp.html">(sdp)</a>
+<a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_sdp-old.html">(sdp-old)</a></u></b><br>
   
 <table>
   <tr>
