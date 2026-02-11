@@ -7,7 +7,7 @@ title: IC Student Quiz - Diseño canónico
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Saca la tabla de transición y obtén la expresión mínima suma de productos del bit ... del siguiente autómata.
+Saca la tabla de transición y obtén la expresión mínima suma de productos del bit ... del siguiente autómata.<br>
 Codifica los estados según se indica en la tabla. No olvides aprovechar los don't cares (si los hay).
 </div>
 {% endcapture %}
