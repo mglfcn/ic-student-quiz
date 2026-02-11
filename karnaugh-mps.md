@@ -7,7 +7,7 @@ title: IC Student Quiz - karnaugh-mps
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Aplica el método de Karnaugh y obtén el *mínimo producto de sumas* de la función Z.<br><br>
+Aplica el método de Karnaugh y obtén el <i>mínimo producto de sumas</i> de la función Z.<br><br>
 <table style="text-align: center;" border="1" frame="border" rules="groups">
     <colgroup align="center" span="4">
     </colgroup>
