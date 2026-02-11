@@ -1,0 +1,255 @@
+
+<meta charset="UTF-8">
+<script type="text/javascript">
+	
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_vector_suma2
+	    // Vector de bits que especifican los bits de un ejercicio de suma en binario.
+	    // Incluye botones para apuntar el acarreo, cuyos bits no se incluyen en la respuesta.
+	    // Incluye un botón para recuperar el valor de los botones en caso de recarga.
+	    // Ejemplo: 111111110000000100000000SI
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_vector_suma2.html
+	    // Versión: 16/10/2023
+	    /////////////////////////////////////////////////////////////////	
+	
+    function actualizar_result() {
+        var va7 = document.getElementById("ida7").value.toString();
+        var va6 = document.getElementById("ida6").value.toString();
+        var va5 = document.getElementById("ida5").value.toString();
+        var va4 = document.getElementById("ida4").value.toString();
+        var va3 = document.getElementById("ida3").value.toString();
+        var va2 = document.getElementById("ida2").value.toString();
+        var va1 = document.getElementById("ida1").value.toString();
+        var va0 = document.getElementById("ida0").value.toString();
+
+        var vb7 = document.getElementById("idb7").value.toString();
+        var vb6 = document.getElementById("idb6").value.toString();
+        var vb5 = document.getElementById("idb5").value.toString();
+        var vb4 = document.getElementById("idb4").value.toString();
+        var vb3 = document.getElementById("idb3").value.toString();
+        var vb2 = document.getElementById("idb2").value.toString();
+        var vb1 = document.getElementById("idb1").value.toString();
+        var vb0 = document.getElementById("idb0").value.toString();
+
+        var vs7 = document.getElementById("ids7").value.toString();
+        var vs6 = document.getElementById("ids6").value.toString();
+        var vs5 = document.getElementById("ids5").value.toString();
+        var vs4 = document.getElementById("ids4").value.toString();
+        var vs3 = document.getElementById("ids3").value.toString();
+        var vs2 = document.getElementById("ids2").value.toString();
+        var vs1 = document.getElementById("ids1").value.toString();
+        var vs0 = document.getElementById("ids0").value.toString();
+
+        var vc8 = document.getElementById("idc8").value.toString();
+        var vc7 = document.getElementById("idc7").value.toString();
+        var vc6 = document.getElementById("idc6").value.toString();
+        var vc5 = document.getElementById("idc5").value.toString();
+        var vc4 = document.getElementById("idc4").value.toString();
+        var vc3 = document.getElementById("idc3").value.toString();
+        var vc2 = document.getElementById("idc2").value.toString();
+        var vc1 = document.getElementById("idc1").value.toString();
+
+        var vov = document.getElementById("idov").value.toString();
+
+        //var respuesta = va7 + va6 + va5 + va4 + va3 + va2 + va1 + va0 + vb7 + vb6 + vb5 + vb4 + vb3 + vb2 + vb1 + vb0 + vs7 + vs6 + vs5 + vs4 + vs3 + vs2 + vs1 + vs0 + vc8 + vc7 + vc6 + vc5 + vc4 + vc3 + vc2 + vc1 + vov;
+        var respuesta = va7 + va6 + va5 + va4 + va3 + va2 + va1 + va0 + vb7 + vb6 + vb5 + vb4 + vb3 + vb2 + vb1 + vb0 + vs7 + vs6 + vs5 + vs4 + vs3 + vs2 + vs1 + vs0 + vov;
+
+        if (respuesta.length == 26) {
+            document.getElementById("idcopiar").disabled = false;
+        } else {
+            document.getElementById("idcopiar").disabled = true;
+        }
+
+        document.getElementById("result").textContent = respuesta;
+        document.getElementById("result2").textContent = "";
+    }
+
+    function b(id) {
+        //var id = "idb0";
+        if (document.getElementById(id).value == "") {
+            document.getElementById(id).value = "1";
+        } else if (document.getElementById(id).value == "1") {
+            document.getElementById(id).value = "0";
+        } else {
+            document.getElementById(id).value = "";
+        }
+        actualizar_result();
+
+        // guardamos el valor en una cookie
+        setCookie(id, document.getElementById(id).value.toString(), {'max-age': 3600}); // expira en 1h
+        //document.getElementById("idMR").disabled = false;
+    }
+
+    function ov() {
+        id = "idov";
+        if (document.getElementById(id).value == "") {
+            document.getElementById(id).value = "SI";
+        } else if (document.getElementById(id).value == "SI") {
+            document.getElementById(id).value = "NO";
+        } else {
+            document.getElementById(id).value = "";
+        }
+        actualizar_result();
+
+        // guardamos el valor en una cookie
+        setCookie(id, document.getElementById(id).value.toString(), {'max-age': 3600}); // expira en 1h
+
+    }
+
+    function copiar() {
+        navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+        document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+    }
+
+    function MR(){ // recupera los valores desde las cookies
+        document.getElementById("ida0").value = getCookie("ida0");
+        document.getElementById("ida1").value = getCookie("ida1");
+        document.getElementById("ida2").value = getCookie("ida2");
+        document.getElementById("ida3").value = getCookie("ida3");
+        document.getElementById("ida4").value = getCookie("ida4");
+        document.getElementById("ida5").value = getCookie("ida5");
+        document.getElementById("ida6").value = getCookie("ida6");
+        document.getElementById("ida7").value = getCookie("ida7");
+
+        document.getElementById("idb0").value = getCookie("idb0");
+        document.getElementById("idb1").value = getCookie("idb1");
+        document.getElementById("idb2").value = getCookie("idb2");
+        document.getElementById("idb3").value = getCookie("idb3");
+        document.getElementById("idb4").value = getCookie("idb4");
+        document.getElementById("idb5").value = getCookie("idb5");
+        document.getElementById("idb6").value = getCookie("idb6");
+        document.getElementById("idb7").value = getCookie("idb7");
+
+        document.getElementById("ids0").value = getCookie("ids0");
+        document.getElementById("ids1").value = getCookie("ids1");
+        document.getElementById("ids2").value = getCookie("ids2");
+        document.getElementById("ids3").value = getCookie("ids3");
+        document.getElementById("ids4").value = getCookie("ids4");
+        document.getElementById("ids5").value = getCookie("ids5");
+        document.getElementById("ids6").value = getCookie("ids6");
+        document.getElementById("ids7").value = getCookie("ids7");
+
+        document.getElementById("idc1").value = getCookie("idc1");
+        document.getElementById("idc2").value = getCookie("idc2");
+        document.getElementById("idc3").value = getCookie("idc3");
+        document.getElementById("idc4").value = getCookie("idc4");
+        document.getElementById("idc5").value = getCookie("idc5");
+        document.getElementById("idc6").value = getCookie("idc6");
+        document.getElementById("idc7").value = getCookie("idc7");
+        document.getElementById("idc8").value = getCookie("idc8");
+
+        document.getElementById("idov").value = getCookie("idov");
+
+        actualizar_result();
+    }
+
+
+// https://es.javascript.info/cookie
+
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    //"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)" quito el replace que da problemas en moodle
+    "(?:^|; )" + name + "=([^;]*)"
+  ));
+  //return matches ? decodeURIComponent(matches[1]) : undefined;
+  return matches ? decodeURIComponent(matches[1]) : "";
+
+}
+
+function setCookie(name, value, options = {}) {
+
+  options = {
+    path: '/',
+    // agregar otros valores predeterminados si es necesario
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+// Ejemplo de uso:
+//setCookie('user', 'John', {secure: true, 'max-age': 3600});
+
+</script><strong></strong>
+Pulsa los botones para generar tu respuesta y copia-pega.<br>Después de pulsar 'Comprobar' puedes usar el botón ''recuperar' para cargar el contenido anterior.
+<br>
+<table border="1" frame="border" rules="groups">
+    <thead>
+        <tr>
+            <th scope="col" style="text-align: center;"></th>
+            <th scope="col" style="text-align: center;"></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc8" type="button" value="" onclick="b('idc8')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc7" type="button" value="" onclick="b('idc7')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc6" type="button" value="" onclick="b('idc6')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc5" type="button" value="" onclick="b('idc5')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc4" type="button" value="" onclick="b('idc4')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc3" type="button" value="" onclick="b('idc3')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc2" type="button" value="" onclick="b('idc2')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;"><span style="font-weight: normal;"><input id="idc1" type="button" value="" onclick="b('idc1')" style="font-size:20px; height:40px; width:40px"></span></th>
+            <th scope="col" style="text-align: center;">← C</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;"></td>
+            <td style="text-align: center;">A</td>
+            <td style="text-align: center;">→</td>
+            <td style="text-align: center;"><input id="ida7" type="button" value="" onclick="b('ida7')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida6" type="button" value="" onclick="b('ida6')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida5" type="button" value="" onclick="b('ida5')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida4" type="button" value="" onclick="b('ida4')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida3" type="button" value="" onclick="b('ida3')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida2" type="button" value="" onclick="b('ida2')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida1" type="button" value="" onclick="b('ida1')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ida0" type="button" value="" onclick="b('ida0')" style="font-size:20px; height:40px; width:40px"></td>
+        </tr>
+        <tr style="border-bottom-style: solid">
+            <td style="text-align: center;">+</td>
+            <td style="text-align: center;">B</td>
+            <td style="text-align: center;">→</td>
+            <td style="text-align: center;"><input id="idb7" type="button" value="" onclick="b('idb7')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb6" type="button" value="" onclick="b('idb6')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb5" type="button" value="" onclick="b('idb5')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb4" type="button" value="" onclick="b('idb4')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb3" type="button" value="" onclick="b('idb3')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb2" type="button" value="" onclick="b('idb2')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb1" type="button" value="" onclick="b('idb1')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="idb0" type="button" value="" onclick="b('idb0')" style="font-size:20px; height:40px; width:40px"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"></td>
+            <td style="text-align: center;">S</td>
+            <td style="text-align: center;">→</td>
+            <td style="text-align: center;"><input id="ids7" type="button" value="" onclick="b('ids7')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids6" type="button" value="" onclick="b('ids6')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids5" type="button" value="" onclick="b('ids5')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids4" type="button" value="" onclick="b('ids4')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids3" type="button" value="" onclick="b('ids3')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids2" type="button" value="" onclick="b('ids2')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids1" type="button" value="" onclick="b('ids1')" style="font-size:20px; height:40px; width:40px"></td>
+            <td style="text-align: center;"><input id="ids0" type="button" value="" onclick="b('ids0')" style="font-size:20px; height:40px; width:40px"></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+¿Se produce desbordamiento? <input id="idov" type="button" value="" onclick="ov()" style="font-size:20px; height:40px; width:40px">
+<br>
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" style="height:50px; width:55px" disabled="true">
+<input id="idMR" type="button" value="recuperar" onclick="MR()" style="height:50px; width:85px">
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
