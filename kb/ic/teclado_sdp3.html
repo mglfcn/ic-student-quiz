@@ -1,0 +1,101 @@
+
+<meta charset="UTF-8">
+    <script type="text/javascript">
+		
+	    /////////////////////////////////////////////////////////////////
+	    // Autor: Luis M. Ramos luisma@unizar.es
+	    // Nombre: teclado_sdp3
+	    // Expresión suma de productos de dos bits de estado (q1, q0) y una entrada X
+	    // Ejemplo: q1·X+q0'·X'+q1'
+	    // url: https://webdiis.unizar.es/~luisma/ic/teclado_sdp3.html
+	    // Versión: 08/12/2022
+	    /////////////////////////////////////////////////////////////////			
+		
+		var indice = 0;
+
+        function and() {
+            document.getElementById("result").textContent += "·";
+            document.getElementById("result2").textContent = "";
+            variable();
+        }
+        function or() {
+            document.getElementById("result").textContent += "+";
+            document.getElementById("result2").textContent = "";
+			indice=0;
+            variable();
+        }
+
+        function not() {
+            document.getElementById("result").textContent += "'";
+            document.getElementById("result2").textContent = "";
+            document.getElementById("idnot").disabled = true;
+        }
+
+        function operador_o_not() {
+            document.getElementById("idnot").disabled = false;
+            if (indice < 3) document.getElementById("idand").disabled = false;
+            document.getElementById("idor").disabled = false;
+            document.getElementById("ida").disabled = true;
+            document.getElementById("idb").disabled = true;
+            document.getElementById("idc").disabled = true;
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function variable() {
+            document.getElementById("idnot").disabled = true;
+            document.getElementById("idand").disabled = true;
+            document.getElementById("idor").disabled = true;
+            if (indice == 0) document.getElementById("ida").disabled = false;
+            if (indice <= 1) document.getElementById("idb").disabled = false;
+            if (indice <= 2) document.getElementById("idc").disabled = false;
+            document.getElementById("idcopiar").disabled = true;
+        }
+
+        function a() {
+            document.getElementById("result").textContent += "q1";
+            document.getElementById("result2").textContent = "";
+			indice = 1;
+            operador_o_not();
+        }
+
+        function b() {
+            document.getElementById("result").textContent += "q0";
+            document.getElementById("result2").textContent = "";
+			indice = 2;
+            operador_o_not();
+        }
+
+        function c() {
+            document.getElementById("result").textContent += "X";
+            document.getElementById("result2").textContent = "";
+			indice = 3;
+            operador_o_not();
+        }
+
+        function borrar() {
+            document.getElementById("result").textContent = "";
+            document.getElementById("result2").textContent = "";
+			indice = 0;
+            variable();
+            document.getElementById("idcopiar").disabled = false;
+        }
+
+        function copiar() {
+            navigator.clipboard.writeText(document.getElementById('result').innerHTML);
+            document.getElementById("result2").textContent = " Copiado. Pégalo ahora abajo.";
+        }
+    </script>
+</p><label>Pulsa los botones para generar tu respuesta y copia-pega.</label><br>
+<input id="idand" type="button" value="·" onclick="and()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idor"  type="button" value="+" onclick="or()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<input id="idnot" type="button" value="'" onclick="not()" disabled="true" style="font-size:30px; height:50px; width:50px">
+<br>
+<input id="ida" type="button" value="q1" onclick="a()" style="font-size:30px; height:50px; width:50px">
+<input id="idb" type="button" value="q0" onclick="b()" style="font-size:30px; height:50px; width:50px">
+<input id="idc" type="button" value="X" onclick="c()" style="font-size:30px; height:50px; width:50px">
+<br>
+<input type="button" value="borrar" onclick="borrar()" style="height:50px; width:50px">
+<input id="idcopiar" type="button" value="copiar" onclick="copiar()" disabled="true" style="height:50px; width:50px">
+
+<div id="result" style="font-size:30px;"></div>
+<div id="result2"></div>
