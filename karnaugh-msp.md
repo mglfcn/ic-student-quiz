@@ -3,11 +3,11 @@ layout: default
 title: IC Student Quiz - karnaugh-msp
 ---
 
-# Ejemplo de ejercicio: Obtener <i>mínima suma de productos</i> usando el método de Karnaugh
+# Ejemplo de ejercicio: Obtener *mínima suma de productos* usando el método de Karnaugh
 
 {% capture macro_enunciado %}
 <div style="border: 1px solid #000; padding: 20px; max-width: 650px; width: 100%; border-radius: 8px; background-color: #f9f9f9;"> 
-Aplica el método de Karnaugh y obtén la mínima suma de productos de la función Z.<br><br>
+Aplica el método de Karnaugh y obtén la <i>mínima suma de productos</i> de la función Z.<br><br>
 <table style="text-align: center;" border="1" frame="border" rules="groups">
     <colgroup align="center" span="4">
     </colgroup>
