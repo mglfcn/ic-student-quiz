@@ -13,6 +13,13 @@ Los ejercicios tendrán accesible un teclado que facilitará la generación de l
 
 <div style="display:flex; gap:30px; align-items:center;">
   <img src="img/el-juego-ha-comenzado.png" width="250">
-  <iframe src="https://drive.google.com/file/d/13g6vsv0FgCinb1v43ZtrGR6Sx2zJ3v1R/preview" width="640" height="360" allow="autoplay"></iframe>
+  <iframe 
+    src="https://drive.google.com/file/d/13g6vsv0FgCinb1v43ZtrGR6Sx2zJ3v1R/preview" 
+    width="640" 
+    height="360" 
+    allow="autoplay; fullscreen" 
+    allowfullscreen>
+</iframe>
+
 </div>
 
