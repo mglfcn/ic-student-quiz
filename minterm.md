@@ -13,7 +13,7 @@ Indica cuál es su minterm m<sub>i</sub>
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://atc.unizar.es/mkgen/mkgen.html#N4Ig5iBcIPQwBANgLQDcCGAnAlugRgDYCm8AttgHYAuRmpAOhQM5VZXwC889IAHgKw94FAPZUA-PHQUAJtz4AWIaIlTZ83gGZlYydLk9eAJh2r9GgIym96wwAZrjRis7yA5D0bmuPAO2eKeHgQABoQJigAbRBfUJA3OIAfOIEUhRTNFKMUixS7EABdMJkoEBQMHHxiMkoaOjiAYygqTABXIgBfIA">minterm de 6 variables</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_m6v.html">(m6v)</a></u></b><br>
+Formato de respuesta: <b><u><a href="https://atc.unizar.es/mkgen/mkgen.html#N4Ig5iBcIPQwBANgLQDcCGAnAlugRgDYCm8AttgHYAuRmpAOhQM5VZXwC889IAHgKw94FAPZUA-PHQUAJtz4AWIaIlTZ83gGZlYydLk9eAJh2r9GgIym96wwAZrjRis7yA5D0bmuPAO2eKeHgQABoQJigAbRBfUJA3OIAfOIEUhRTNFKMUixS7EABdMJkoEBQMHHxiMkoaOjiAYygqTABXIgBfIA">minterm de 6 variables (m6v)</a></u></b><br>
 <table>
   <tr>
     <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
