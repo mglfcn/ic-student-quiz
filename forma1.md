@@ -12,7 +12,7 @@ Obtén la 1ª F.C. de ...
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_1FC.html">exp en 1ª Forma Canónica (minterms ordenados)</a> <b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_1FC.html">(1FC)</a></u></b><br>
+Formato de respuesta: <b><u><a href="https://atc.unizar.es/mkgen/mkgen.html#N4Ig5iBcIPQwBARgM4Bd4GECGA7A9jgJYDGWANvAGJ4BOAtvABTK2oCmAJvHYTu-cgCUAHRxosNdAF54wkHQAMcprVnzEcwQH4VNNXQBMmnY1Vy6AZmO79AFmum95gKwOz8gGxun8gOzHReCDghHMNEBtzIxBtSPkrGJN3OntEuLpXNMd9Lyzk-0TA4KDQ+Wj0hNjs81Sq5My6nzpcxv0C7SLi0stlavlapKaGwZzvNoCcYpK7Xvqx8xaR83atTpD9TPTF9JW16YXZpt3Jqe6C0VFVGTkAajkikAAaEGQoAG0QG6eQAB9vxX+iH+Bn+Fn+tn+zn+Hn+vhAAF1nhwoCAUOhsPgiKQKNR6EwWJJONxePw6EJvsQoKgaABXNgAXyAA">exp en 1ª Forma Canónica (minterms ordenados) (1FC)</a></u></b><br>
 <table>
   <tr>
     <td style="padding: 15px 25px; vertical-align: top;">Ejemplo:</td>
@@ -51,15 +51,15 @@ Luego pulsa el botón '← Atrás' del navegador para volver.
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
-2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
-3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
-4. Pon un nombre a tu pregunta.
-5. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
-6. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
-7. En el campo 'Respuesta' indica la respuesta y su calificación.
+<!-- 1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button> -->
+1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
+2. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
+3. Pon un nombre a tu pregunta.
+4. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
+5. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
+6. En el campo 'Respuesta' indica la respuesta y su calificación.
 
-Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
+Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
 <textarea id="codigo_div1" style="display:none;">
 {{ macro_enunciado }}
@@ -76,7 +76,7 @@ function copiar_codigo(){
  if (version_div==1){
   const texto = document.getElementById("codigo_div1").value;
   navigator.clipboard.writeText(texto);
-  alert("Copiado código con teclado enlazado (sí funciona en StudentQuiz)");
+  alert("Copiado código con teclado enlazado");
  }else {
   const texto = document.getElementById("codigo_div2").value;
   navigator.clipboard.writeText(texto);
