@@ -12,8 +12,7 @@ Aplica el método de diseño directo (usando un bit por estado) y obtén la expr
 {% endcapture %}
 
 {% capture macro_formato_y_ejemplo %}
-Formato de respuesta: <a href="https://webdiis.unizar.es/~luisma/ic/teclado_sdp2.html">suma de productos (var. ord. en productos)</a>
-<b><u><a href="https://mglfcn.github.io/ic-student-quiz/kb/ic/teclado_sdp2.html">(sdp)</a></u></b><br>
+Formato de respuesta: <b><u><a href="https://atc.unizar.es/mkgen/mkgen.html#N4Ig5iBcIPQwBAZwK4Ft4HsBm8AOAnDAE2QGMAXReAdwEtyALTAOwFMBaBjc+V504rWZh4ACgz4irfKyLwAbgEN8tRQCMANq0QBKADrNE5ZT3gBeeHpABFAAxXRi5nKsANK-GbcA-Du9iJSxsARgcnFxB3EE8fPz8A-CDrACYw5yComPJfHISkgGY0iMyvbLj-cUSrawAWIoyPUpz4yobopr8DeG6e+ARq0JBHdLdG2IrA6tSh8Las5omqm0KZkcixstzW6rrV4o2FvNH28a7e7v6baeH9k82j5frj+fKH2qf1u8Ptz5fvM-Ol2sKxucw6iySu1Bz3BLUmv3BAN6QKhsxh4weJVOzHOFzBPgMBlmFisAHarAZAuYggBqCnMUrUqwAcnpIAANCBEFAANogUkckA0wXMwUAH0FdklwUlyUl+UlNUFrhAAF1OUQoFy0JgcARiGRKDR6EwMGxONxePxBMIElIZHIlCp1FpdILSFByPhkKwAL5AA">suma de productos (var. ord. en productos) (sdp)</a></u></b><br>
   
 <table>
   <tr>
@@ -53,16 +52,16 @@ Luego pulsa el botón '← Atrás' del navegador para volver.
 # Instrucciones
 
 Para crear una pregunta Moodle de este estilo:
-1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button>
-2. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
-3. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
-4. Pon un nombre a tu pregunta.
-5. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
-6. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
-7. En el campo 'Respuesta' indica la respuesta y su calificación.
-8. Para permitir permutaciones teclea la respuesta en el formulario de abajo y te indicará el valor a poner en el campo 'Respuesta 2'.
+<!-- 1. Elige la versión <button onclick="mostrar_div1()">Con teclado enlazado (sí funciona en StudentQuiz)</button>   <button onclick="mostrar_div2()">Con teclado incrustado (no funciona en StudentQuiz)</button> -->
+1. Pulsa este botón para copiar el código <button onclick="copiar_codigo()">Copiar código</button>
+2. Ve a la actividad 'IC Student Quiz', pulsa el botón 'Crear pregunta nueva' y elige tipo de pregunta 'Respuesta corta'.
+3. Pon un nombre a tu pregunta.
+4. En el campo 'Enunciado de la pregunta' selecciona la opción '<> Código fuente' del menú 'Ver'.
+5. Pega el código (Ctrl-v), adapta el enunciado a tu pregunta y pulsa el botón 'Guardar'.
+6. En el campo 'Respuesta' indica la respuesta y su calificación.
+7. Para permitir permutaciones teclea la respuesta en el formulario de abajo y te indicará el valor a poner en el campo 'Respuesta 2'.
 
-Nota: Si no usas el editor tinyMCE el paso 5 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
+Nota: Si no usas el editor tinyMCE el paso 4 puede ser diferente. Puedes cambiar el editor en: Preferencias / Configuración del editor.
 
 <iframe width="600" height="350" style="border:none;" src="https://webdiis.unizar.es/~luisma/ic/teclado_regexp_sdp.html" allow="clipboard-read; clipboard-write"></iframe>   
 
@@ -81,7 +80,7 @@ function copiar_codigo(){
  if (version_div==1){
   const texto = document.getElementById("codigo_div1").value;
   navigator.clipboard.writeText(texto);
-  alert("Copiado código con teclado enlazado (sí funciona en StudentQuiz)");
+  alert("Copiado código con teclado enlazado");
  }else {
   const texto = document.getElementById("codigo_div2").value;
   navigator.clipboard.writeText(texto);
