@@ -77,7 +77,7 @@ function copiar_codigo(){
  if (version_div==1){
   const texto = document.getElementById("codigo_div1").value;
   navigator.clipboard.writeText(texto);
-  alert("Copiado código con teclado enlazado (sí funciona en StudentQuiz)");
+  alert("Copiado código con teclado enlazado");
  }else {
   const texto = document.getElementById("codigo_div2").value;
   navigator.clipboard.writeText(texto);
